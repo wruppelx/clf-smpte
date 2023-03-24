@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ProcessList xmlns:dcml="http://www.smpte-ra.org/schemas/433/2008/dcmlTypes" xmlns="http://www.smpte-ra.org/ns/2136/2023" compCLFversion="3.0">
+    <Id>urn:uuid:79e7ef18-07e1-403e-9568-ee51e3113b40</Id>
+    <Description>Illegal values -- the minInValue must be less than the maxInValue.</Description>
+    <Range inBitDepth="8i" outBitDepth="32f" style="Clamp">
+        <Id>urn:uuid:f2c50a8d-946f-4455-87d6-0ea13e53b8da</Id>
+        <minInValue>240</minInValue>
+        <maxInValue>240</maxInValue>
+        <minOutValue>-0.5</minOutValue>
+        <maxOutValue>2</maxOutValue>
+    </Range>
+</ProcessList>

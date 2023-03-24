@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ProcessList xmlns:dcml="http://www.smpte-ra.org/schemas/433/2008/dcmlTypes" xmlns="http://www.smpte-ra.org/ns/2136/2023" compCLFversion="3.0">
+    <Id>urn:uuid:aa90d727-39cf-4530-acb6-ff88784287aa</Id>
+    <Description>The outBitDepth is illegal</Description>
+    <Matrix inBitDepth="32f" outBitDepth="16d">
+        <Id>urn:uuid:c8b24a82-c6a7-4369-a994-87552b50fca7</Id>
+        <Array dim="3 3">
+ 3.24000 -1.53700 -0.49850
+-0.96930  1.87600  0.04156
+ 0.05560 -0.20400  1.05730
+        </Array>
+    </Matrix>
+</ProcessList>

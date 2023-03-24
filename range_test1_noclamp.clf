@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ProcessList xmlns:dcml="http://www.smpte-ra.org/schemas/433/2008/dcmlTypes" xmlns="http://www.smpte-ra.org/ns/2136/2023" compCLFversion="3.0">
+    <Id>urn:uuid:1e30c52c-5c1d-440e-a7a3-e66ce9278446</Id>
+    <Description>Basic range with noClamp style</Description>
+    <Description>Note that the 8i bit-depth does not constrain the legal range of values</Description>
+    <Range inBitDepth="8i" outBitDepth="32f" style="noClamp">
+        <Id>urn:uuid:d430c3f0-c8c0-4c06-b830-6ab51169ab7a</Id>
+        <minInValue>-16</minInValue>
+        <minOutValue>-0.05</minOutValue>
+        <maxInValue>272</maxInValue>
+        <maxOutValue>1.05</maxOutValue>
+    </Range>
+</ProcessList>

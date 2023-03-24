@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ProcessList xmlns:dcml="http://www.smpte-ra.org/schemas/433/2008/dcmlTypes" compCLFversion="2.0" xmlns="http://www.smpte-ra.org/ns/2136/2023">
+   <Id>urn:uuid:bc7adf0a-3919-4c59-93f1-1f19cf237b35</Id>
+   <Description>Version is too low to support Log.</Description>
+   <InputDescriptor>inputDesc</InputDescriptor>
+   <OutputDescriptor>outputDesc</OutputDescriptor>
+   <Log inBitDepth="32f" outBitDepth="16f" style="log10">
+      <Id>urn:uuid:f3e7cce7-6117-4d7b-8622-181b688c8e3c</Id>
+      <Description>Log10 logarithm operation</Description>
+   </Log>
+</ProcessList>

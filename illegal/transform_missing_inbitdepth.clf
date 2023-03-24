@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ProcessList xmlns:dcml="http://www.smpte-ra.org/schemas/433/2008/dcmlTypes" xmlns="http://www.smpte-ra.org/ns/2136/2023" compCLFversion="3.0">
+    <Id>urn:uuid:9113206b-6cca-4687-8126-2726d4bbaa3e</Id>
+    <Description>The inBitDepth is missing</Description>
+    <LUT1D  outBitDepth="8i">
+        <Id>urn:uuid:22490fe3-5179-496a-93b1-263e196073d7</Id>
+        <Array dim="2 1">
+64
+196
+        </Array>
+    </LUT1D>
+</ProcessList>

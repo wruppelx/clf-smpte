@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ProcessList xmlns:dcml="http://www.smpte-ra.org/schemas/433/2008/dcmlTypes" xmlns="http://www.smpte-ra.org/ns/2136/2023" compCLFversion="3.0">
+  <Id>urn:uuid:e65748b5-180c-4573-b8e2-ebbc27474d19</Id>
+  <Description>Lut3d must have equal grid dimensions</Description>
+  <LUT3D inBitDepth="32f" outBitDepth="32f">
+    <Id>urn:uuid:179e53df-b5f9-429d-af24-7bdbbc4986c0</Id>
+    <Array dim="2 2 3 3">
+0 0 0
+0 0 1
+0 1 0
+0 1 1
+0 0 0
+0 0 1
+0 1 0
+0 1 1
+1 0 0
+1 0 1
+1 1 0
+1 1 1
+    </Array>
+  </LUT3D>
+</ProcessList>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ProcessList xmlns:dcml="http://www.smpte-ra.org/schemas/433/2008/dcmlTypes" xmlns="http://www.smpte-ra.org/ns/2136/2023:v0.95" compCLFversion="3.0">
+    <Id>urn:uuid:4e5461c0-750f-4f14-b475-2f04730c9211</Id>
+    <Description>Half-domain must have 65536 values.</Description>
+    <InputDescriptor>RGB</InputDescriptor>
+    <OutputDescriptor>RGB</OutputDescriptor>
+    <LUT1D inBitDepth="10i" outBitDepth="10i" halfDomain="true">
+        <Id>urn:uuid:5d9cfebc-46d4-4d94-863f-dfe20bdf8847</Id>
+        <Array dim="32 1">
+   0
+ 215
+ 294
+ 354
+ 403
+ 446
+ 485
+ 520
+ 553
+ 583
+ 612
+ 639
+ 665
+ 689
+ 713
+ 735
+ 757
+ 779
+ 799
+ 819
+ 838
+ 857
+ 875
+ 893
+ 911
+ 928
+ 944
+ 961
+ 977
+ 992
+1008
+1023
+        </Array>
+    </LUT1D>
+</ProcessList>

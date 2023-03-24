@@ -1,0 +1,13 @@
+<ProcessList xmlns:dcml="http://www.smpte-ra.org/schemas/433/2008/dcmlTypes" xmlns="http://www.smpte-ra.org/ns/2136/2023" name="matrix example" compCLFversion="3.0">
+    <Id>urn:uuid:c15f3e03-17c5-4093-823e-1ca1eb3d9642</Id>
+    <Description>This file has Windows line-endings.</Description>
+    <Description>Also, the file does not start with a ?xml header.</Description>
+    <Matrix name="identity matrix" inBitDepth="16f" outBitDepth="12i">
+        <Id>urn:uuid:62546eb9-00fe-406f-97e3-189f1b0c3a1a</Id>
+        <Array dim="3 3">
+4095 0 0
+0 4095 0
+0 0 4095
+        </Array>
+    </Matrix>
+</ProcessList>

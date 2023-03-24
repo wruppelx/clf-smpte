@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ProcessList xmlns:dcml="http://www.smpte-ra.org/schemas/433/2008/dcmlTypes" compCLFversion="3.0" xmlns="http://www.smpte-ra.org/ns/2136/2023">
+    <Id>urn:uuid:385fed1c-d2a7-40e7-85f2-e94038b03e5b</Id>
+    <Description>Test all Logarithmic style values</Description>
+
+    <Log inBitDepth="16f" outBitDepth="8i" style="antiLog2">
+      <Id>urn:uuid:d5410725-bb43-42c8-845f-9dee71a55cb3</Id>
+      <Description>AntiLog2 logarithm operation</Description>
+    </Log>
+    <Log inBitDepth="8i" outBitDepth="16f" style="log2" name="logarithm">
+      <Id>urn:uuid:70d4c9ef-e836-4cfd-bf38-1bdf0f7f75b9</Id>
+      <Description>Log base 2</Description>
+    </Log>
+
+    <Log inBitDepth="16f" outBitDepth="12i" style="linToLog">
+        <Id>urn:uuid:76e12c24-0ff5-45c6-a59a-658d05d0f990</Id>
+        <Description>Classic Cineon curve</Description>
+        <LogParams logSideSlope="0.29325513196" logSideOffset="0.66959921799" 
+                   linSideSlope="0.98920224838" linSideOffset="0.01079775162" base="10" />
+    </Log>
+
+    <Log inBitDepth="12i" outBitDepth="32f" style="antiLog10">
+      <Id>urn:uuid:674f77a7-c6c8-4434-bcae-33bba79c306a</Id>
+    </Log>
+
+    <Log inBitDepth="32f" outBitDepth="10i" style="log10">
+      <Id>urn:uuid:7fec5e0c-4cc6-4e25-a9e9-8c835ec99fa6</Id>
+    </Log>
+
+    <Log inBitDepth="10i" outBitDepth="32f" style="logToLin">
+        <Id>urn:uuid:ae75954b-83f9-4acd-b4f6-571b6d5f489a</Id>
+        <LogParams logSideSlope="0.29325513196" logSideOffset="0.66959921799" 
+                   linSideSlope="0.98920224838" linSideOffset="0.01079775162" base="10" />
+    </Log>
+
+    <Log inBitDepth="32f" outBitDepth="16f" style="cameraLinToLog">
+        <Id>urn:uuid:e5ef9247-b80a-43fe-becd-bbed03aa7a42</Id>
+        <Description>ACEScct curve</Description>
+        <Description>Note that the default base is 2</Description>
+        <LogParams logSideSlope="0.05707762557" logSideOffset="0.5547945205" linSideBreak="0.0078125" />
+    </Log>
+    <Log inBitDepth="16f" outBitDepth="16f" style="cameraLogToLin">
+        <Id>urn:uuid:57f76315-7758-410a-ba2e-57ef553d5fd8</Id>
+        <Description>ACEScct curve</Description>
+        <LogParams logSideSlope="0.05707762557" logSideOffset="0.5547945205" linSideBreak="0.0078125" />
+    </Log>
+
+    <Log inBitDepth="16f" outBitDepth="10i" style="cameraLogToLin" name="sl3">
+        <Id>urn:uuid:d9335c0d-6d2f-4f72-83d6-81a0e11cb07b</Id>
+        <LogParams logSideSlope="0.25562072336" logSideOffset="0.41055718475" linSideBreak="0.01125"
+                   linSideSlope="5.26315789474" linSideOffset="0.05263157895" linearSlope="6.62194371178" base="10" />
+    </Log>
+
+    <Log inBitDepth="10i" outBitDepth="32f" style="linToLog">
+        <Id>urn:uuid:452ee752-363b-4429-8099-0cbd66910fbf</Id>
+        <LogParams channel="R" logSideSlope='0.3' logSideOffset='0.6' linSideSlope='0.9' linSideOffset='0.05' base="8"/>
+        <LogParams channel="G" linSideSlope='5' linSideOffset='0.05' logSideSlope='0.25' logSideOffset='0.4' base="8"/>
+        <LogParams channel="B" linSideSlope='2' linSideOffset='0.1' logSideSlope='0.28' logSideOffset='0.5' base="8"/>
+    </Log>
+
+    <Range inBitDepth="32f" outBitDepth="32f" style="Clamp">
+        <Id>urn:uuid:8bc0247c-984d-4452-8825-5679d53e21e8</Id>
+        <minInValue>-65504</minInValue>
+        <minOutValue>-65504</minOutValue>
+        <maxInValue>65504</maxInValue>
+        <maxOutValue>65504</maxOutValue>
+    </Range>
+</ProcessList>
