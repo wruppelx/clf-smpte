@@ -271,7 +271,7 @@
     </xs:complexType>
     <xs:complexType name="MatrixArrayType">
         <xs:simpleContent>
-            <xs:extension base="clf:floatListType">
+            <xs:extension base="clf:ArrayType">
                 <xs:attribute name="dim" use="required">
                     <xs:simpleType>
                         <xs:restriction base="clf:dimType">
