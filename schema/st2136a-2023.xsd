@@ -20,7 +20,7 @@
             <xs:element ref="clf:Info" minOccurs="0" maxOccurs="1"/>
             <xs:element ref="clf:ProcessNode" minOccurs="1" maxOccurs="unbounded"/>
         </xs:sequence>
-        <xs:attribute name="compCLFversion" type="xs:string" use="required"/>
+        <xs:attribute name="compCLFversion" type="xs:string" use="optional"/><!-- deprecated, CLF version is signalled by the schama URI -->
         <xs:attribute name="name" type="xs:string" use="optional"/>
         <xs:attribute name="inverseOf" type="dcml:UUIDType" use="optional"/>
     </xs:complexType>
