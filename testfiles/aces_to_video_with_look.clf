@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ProcessList xmlns:dcml="http://www.smpte-ra.org/schemas/433/2008/dcmlTypes" xmlns="http://www.smpte-ra.org/ns/2136/2023" compCLFversion="3">
-    <Id>urn:uuid:5271f099-191e-4014-a3c2-6aa5d4572634</Id>
+<ProcessList xmlns="http://www.smpte-ra.org/ns/2136/2023" id="urn:uuid:5271f099-191e-4014-a3c2-6aa5d4572634">
     <Description>Converts ACES to ACEScct, applies ASC CDL, then applies a 3D-LUT to convert back to ACES and apply the RRT+ODT.Academy.Rec709_100nits_dim</Description>
     <InputDescriptor>ACES2065-1</InputDescriptor>
     <OutputDescriptor>HD (Rec 709) video</OutputDescriptor>
-    <Matrix inBitDepth="16f" outBitDepth="32f">
-        <Id>urn:uuid:3b4afb5c-6724-4f95-abc0-81ae3030899a</Id>
+    <Matrix inBitDepth="16f" outBitDepth="32f" id="urn:uuid:3b4afb5c-6724-4f95-abc0-81ae3030899a">
         <Description>AP0 to AP1</Description>
         <Array dim="3 3">
             1.45143931614567    -0.236510746893740  -0.214928569251925
@@ -13,13 +11,11 @@
             0.00831614842569772 -0.00603244979102103    0.997716301365324
         </Array>
     </Matrix>
-    <Log inBitDepth="32f" outBitDepth="32f" style="cameraLinToLog">
-        <Id>urn:uuid:fab25d57-aa52-41a3-a8b4-bc4693013a71</Id>
+    <Log inBitDepth="32f" outBitDepth="32f" style="cameraLinToLog" id="urn:uuid:fab25d57-aa52-41a3-a8b4-bc4693013a71">
         <Description>Linear to ACEScct</Description>
         <LogParams logSideSlope="0.05707762557" logSideOffset="0.5547945205" linSideBreak="0.0078125" />
     </Log>
-    <ASC_CDL inBitDepth="32f" outBitDepth="32f" style="Fwd"> 
-        <Id>urn:uuid:85ebc6ea-a7f2-4c6e-8c78-bb038e8e8082</Id>
+    <ASC_CDL inBitDepth="32f" outBitDepth="32f" style="Fwd" id="urn:uuid:85ebc6ea-a7f2-4c6e-8c78-bb038e8e8082"> 
         <Description>On set grading adjustment</Description>
         <SOPNode>
             <Slope>1.00 1.00 0.90</Slope>
@@ -30,8 +26,7 @@
             <Saturation>1.2</Saturation>
         </SatNode>
     </ASC_CDL>
-    <LUT3D inBitDepth="32f" outBitDepth="16f" interpolation="tetrahedral">
-        <Id>urn:uuid:ff40c219-ac31-4c80-b345-be3b15a4577d</Id>
+    <LUT3D inBitDepth="32f" outBitDepth="16f" interpolation="tetrahedral" id="urn:uuid:ff40c219-ac31-4c80-b345-be3b15a4577d">
         <Description>Cube from ACEScct to Rec.709 CV</Description>
         <Description>Generated from ACEScct 0-1 values using reference CTL code</Description>
         <Description>ACEScsc.ACEScct_to_ACES.ctl -> RRT.ctl -> ODT.Academy.Rec709_100nits_dim.ctl</Description>

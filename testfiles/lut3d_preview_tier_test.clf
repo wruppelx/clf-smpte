@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ProcessList xmlns:dcml="http://www.smpte-ra.org/schemas/433/2008/dcmlTypes" xmlns="http://www.smpte-ra.org/ns/2136/2023" compCLFversion="3" name="Preview-tier Lut3D test">
-    <Id>urn:uuid:a508bf8a-db51-4044-b6f9-78103ededba9</Id>
+<ProcessList xmlns="http://www.smpte-ra.org/ns/2136/2023" name="Preview-tier Lut3D test" id="urn:uuid:a508bf8a-db51-4044-b6f9-78103ededba9">
     <Description>Test LUT for Preview-tier CLF validation test suite</Description>
     <InputDescriptor>ACEScct</InputDescriptor>
     <OutputDescriptor>Rec.1886 / Rec.709 video</OutputDescriptor>
-    <LUT3D inBitDepth="32f" outBitDepth="10i" interpolation="tetrahedral">
-        <Id>urn:uuid:e8c73c72-4f06-4b37-9766-f0d27065e130</Id>
+    <LUT3D inBitDepth="32f" outBitDepth="10i" interpolation="tetrahedral" id="urn:uuid:e8c73c72-4f06-4b37-9766-f0d27065e130">
         <Description>This LUT is an ACEScct to Rec.709 Output Transform, clamped to [4,1019]</Description>
         <Array dim="33 33 33 3">
    4    4    4

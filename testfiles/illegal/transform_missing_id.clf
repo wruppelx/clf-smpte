@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ProcessList xmlns:dcml="http://www.smpte-ra.org/schemas/433/2008/dcmlTypes" xmlns="http://www.smpte-ra.org/ns/2136/2023" compCLFversion="3.0">
-    <Description>The ProcessList id element is missing</Description>
-   <Log inBitDepth="32f" outBitDepth="16f" style="log10">
-      <Id>urn:uuid:516d10a8-50e4-42dc-8e36-b6592bdd68a1</Id>
+<ProcessList xmlns="http://www.smpte-ra.org/ns/2136/2023">
+    <Description>The ProcessList id attribute is missing</Description>
+   <Log inBitDepth="32f" outBitDepth="16f" style="log10" id="urn:uuid:516d10a8-50e4-42dc-8e36-b6592bdd68a1">
    </Log>
 </ProcessList>

@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ProcessList xmlns:dcml="http://www.smpte-ra.org/schemas/433/2008/dcmlTypes" compCLFversion="three" name="none" xmlns="http://www.smpte-ra.org/ns/2136/2023">
-    <Id>urn:uuid:752b21e8-d777-4295-9443-a7d60b880062</Id>
-    <Description>Not a legal compCLFversion string</Description>
-    <Matrix inBitDepth="32f" outBitDepth="32f">
-        <Id>urn:uuid:3b5e34ce-eb99-4c97-ad37-87bbfccc0ca3</Id>
+<ProcessList name="none" xmlns="http://www.smpte-ra.org/ns/2136/XXXX" id="urn:uuid:752b21e8-d777-4295-9443-a7d60b880062">
+    <Description>Illegal namespace, was: Not a legal compCLFversion string</Description>
+    <Matrix inBitDepth="32f" outBitDepth="32f" id="urn:uuid:3b5e34ce-eb99-4c97-ad37-87bbfccc0ca3">
         <Array dim="3 3">
  3.24000 -1.53700 -0.49850
 -0.96930  1.87600  0.04156

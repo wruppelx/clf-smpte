@@ -5,8 +5,7 @@
 
 
 <!-- Comment -->
-    <ProcessList xmlns:dcml="http://www.smpte-ra.org/schemas/433/2008/dcmlTypes" xmlns="http://www.smpte-ra.org/ns/2136/2023" compCLFversion="3">
-    <Id>urn:uuid:00a19bb5-d44f-432f-a274-d3927b02cbc3</Id>
+    <ProcessList xmlns="http://www.smpte-ra.org/ns/2136/2023" id="urn:uuid:00a19bb5-d44f-432f-a274-d3927b02cbc3">
     <Description>This is the ProcessList description.</Description>
     <Description>yet &apos;another&apos; &quot;valid&quot; desc</Description>
 <Info>
@@ -17,8 +16,7 @@ This is a "difficult" but 'legal' color transform file.
 <!-- Comment -->
 </Info>
 
-    <Matrix inBitDepth="32f" outBitDepth='32f' name='"quote"'>
-<Id>urn:uuid:0d5d33f9-8d18-4007-af11-da30b2109ee1</Id>
+    <Matrix inBitDepth="32f" outBitDepth='32f' name='"quote"' id="urn:uuid:0d5d33f9-8d18-4007-af11-da30b2109ee1">
 <Description>
 third array dim value is ignored
 
@@ -37,8 +35,7 @@ third array dim value is ignored
     <LUT1D 
            name='a multi-line
  name'
-inBitDepth="32f" outBitDepth="32f">
-    <Id>urn:uuid:eba9fff6-198d-46c7-99eb-a959df3e5122</Id>
+inBitDepth="32f" outBitDepth="32f" id="urn:uuid:eba9fff6-198d-46c7-99eb-a959df3e5122">
         <Description>the n&#8211;dash description</Description>
     <Description>another valid 
 description 

@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ProcessList xmlns:dcml="http://www.smpte-ra.org/schemas/433/2008/dcmlTypes" compCLFversion="3.2" inverseOf="none" xmlns="http://www.smpte-ra.org/ns/2136/2023">
-    <Id>urn:uuid:c111316e-71b8-4da4-b72c-d044044b7110</Id>
-    <Description>Versions higher than current version must be rejected</Description>
-    <Matrix inBitDepth="32f" outBitDepth="32f">
-        <Id>urn:uuid:123953ff-f878-4f62-a2da-188420421de6</Id>
+<ProcessList inverseOf="none" xmlns="http://www.smpte-ra.org/ns/2136/2030" id="urn:uuid:c111316e-71b8-4da4-b72c-d044044b7110">
+    <Description>Illegal XML namespace, was: Versions higher than current version must be rejected</Description>
+    <Matrix inBitDepth="32f" outBitDepth="32f" id="urn:uuid:123953ff-f878-4f62-a2da-188420421de6">
         <Array dim="3 3">
  3.24000 -1.53700 -0.49850
 -0.96930  1.87600  0.04156

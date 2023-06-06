@@ -1,63 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ProcessList xmlns:dcml="http://www.smpte-ra.org/schemas/433/2008/dcmlTypes" compCLFversion="3.0" name="all styles" xmlns="http://www.smpte-ra.org/ns/2136/2023">
-    <Id>urn:uuid:8d6eaadc-5075-4b13-ae7f-3b0dce819792</Id>
+<ProcessList name="all styles" xmlns="http://www.smpte-ra.org/ns/2136/2023" id="urn:uuid:8d6eaadc-5075-4b13-ae7f-3b0dce819792">
     <Description>Test all Exponent style values</Description>
-    <Exponent inBitDepth="16f" outBitDepth="32f" style="basicFwd">
-        <Id>urn:uuid:2bac8e95-121a-4190-b6d9-a59b84cd2f43</Id>
+    <Exponent inBitDepth="16f" outBitDepth="32f" style="basicFwd" id="urn:uuid:2bac8e95-121a-4190-b6d9-a59b84cd2f43">
         <Description>If there is only one Params, use it for R, G, and B.</Description>
         <ExponentParams exponent="2.4" />
     </Exponent>
-    <Exponent inBitDepth="32f" outBitDepth="10i" style="basicRev" name="gamma">
-        <Id>urn:uuid:6f0b66e1-2c8a-4b88-b99f-fef1338ad4b1</Id>
+    <Exponent inBitDepth="32f" outBitDepth="10i" style="basicRev" name="gamma" id="urn:uuid:6f0b66e1-2c8a-4b88-b99f-fef1338ad4b1">
         <ExponentParams channel="R" exponent="2.4" />
         <ExponentParams channel="G" exponent="2.35" />
         <ExponentParams channel="B" exponent="2.2" />
     </Exponent>
-    <Exponent inBitDepth="10i" outBitDepth="8i" style="monCurveFwd">
-        <Id>urn:uuid:35e70315-dada-4cfe-b385-f20cb9c2dada</Id>
+    <Exponent inBitDepth="10i" outBitDepth="8i" style="monCurveFwd" id="urn:uuid:35e70315-dada-4cfe-b385-f20cb9c2dada">
         <Description>Rec 709 OETF</Description>
         <!-- This is the shortest 2.22... string that will yield -->
         <!-- a double that compares exactly equal to 1/0.45. -->
         <ExponentParams exponent="2.2222222222222222" offset="0.099" />
     </Exponent>
-    <Exponent inBitDepth="8i" outBitDepth="32f" style="monCurveRev">
-        <Id>urn:uuid:c3f9782c-be4e-48c5-9f31-68b43afa8441</Id>
+    <Exponent inBitDepth="8i" outBitDepth="32f" style="monCurveRev" id="urn:uuid:c3f9782c-be4e-48c5-9f31-68b43afa8441">
         <ExponentParams offset="0.1" channel="B" exponent="2.6" />
         <ExponentParams channel="G" exponent="2.4" offset="0.01" />
         <ExponentParams channel="R" exponent="2.2" offset="0.001" />
    </Exponent>
-    <Exponent inBitDepth="32f" outBitDepth="8i" style="monCurveFwd">
-        <Id>urn:uuid:1c531ac5-fc3a-47eb-a452-0c7491c19589</Id>
+    <Exponent inBitDepth="32f" outBitDepth="8i" style="monCurveFwd" id="urn:uuid:1c531ac5-fc3a-47eb-a452-0c7491c19589">
         <!-- This sets the R, G and B channels to identity -->
         <ExponentParams exponent="1.0" offset="0.0" />
     </Exponent>
-    <Exponent inBitDepth="8i" outBitDepth="16f" style="basicMirrorFwd">
-        <Id>urn:uuid:aa56115c-97b7-4840-b0a1-815df0a3f0b8</Id>
+    <Exponent inBitDepth="8i" outBitDepth="16f" style="basicMirrorFwd" id="urn:uuid:aa56115c-97b7-4840-b0a1-815df0a3f0b8">
         <ExponentParams exponent="0.4" />
     </Exponent>
-    <Exponent inBitDepth="16f" outBitDepth="8i" style="basicMirrorRev">
-        <Id>urn:uuid:fe5fa8d3-ab71-495c-88da-e09266c479c8</Id>
+    <Exponent inBitDepth="16f" outBitDepth="8i" style="basicMirrorRev" id="urn:uuid:fe5fa8d3-ab71-495c-88da-e09266c479c8">
         <ExponentParams exponent="0.4" />
     </Exponent>
-    <Exponent inBitDepth="8i" outBitDepth="16f" style="basicPassThruFwd">
-        <Id>urn:uuid:295c6520-d89e-47d7-8676-789307786e44</Id>
+    <Exponent inBitDepth="8i" outBitDepth="16f" style="basicPassThruFwd" id="urn:uuid:295c6520-d89e-47d7-8676-789307786e44">
         <ExponentParams exponent="2.4" />
     </Exponent>
-    <Exponent inBitDepth="16f" outBitDepth="8i" style="basicPassThruRev">
-        <Id>urn:uuid:4a141ca4-940b-4291-8aa1-f947953c0264</Id>
+    <Exponent inBitDepth="16f" outBitDepth="8i" style="basicPassThruRev" id="urn:uuid:4a141ca4-940b-4291-8aa1-f947953c0264">
         <ExponentParams exponent="2.4" />
     </Exponent>
-    <Exponent inBitDepth="8i" outBitDepth="16f" style="monCurveMirrorFwd">
-        <Id>urn:uuid:558a992f-c169-4b4e-8fa7-671b373e4160</Id>
+    <Exponent inBitDepth="8i" outBitDepth="16f" style="monCurveMirrorFwd" id="urn:uuid:558a992f-c169-4b4e-8fa7-671b373e4160">
         <ExponentParams exponent="3" offset="0.16" />
     </Exponent>
-    <Exponent inBitDepth="16f" outBitDepth="32f" style="monCurveMirrorRev">
-        <Id>urn:uuid:a1a10d17-055f-4851-9a77-413828df25ed</Id>
+    <Exponent inBitDepth="16f" outBitDepth="32f" style="monCurveMirrorRev" id="urn:uuid:a1a10d17-055f-4851-9a77-413828df25ed">
         <ExponentParams channel="R" exponent="3" offset="0.16" />
         <!-- The G & B channels are not specified and should be set to an identity -->
     </Exponent>
-    <Range inBitDepth="32f" outBitDepth="32f" style="Clamp">
-        <Id>urn:uuid:fee04375-4e35-4c49-9df5-07abc4f6300a</Id>
+    <Range inBitDepth="32f" outBitDepth="32f" style="Clamp" id="urn:uuid:fee04375-4e35-4c49-9df5-07abc4f6300a">
         <minInValue>-65504</minInValue>
         <minOutValue>-65504</minOutValue>
         <maxInValue>65504</maxInValue>

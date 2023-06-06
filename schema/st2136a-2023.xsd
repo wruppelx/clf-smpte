@@ -13,13 +13,13 @@
     <xs:element name="ProcessList" type="clf:ProcessListType"/>
     <xs:complexType name="ProcessListType">
         <xs:sequence>
-            <xs:element name="Id" type="dcml:UUIDType"/>
             <xs:element name="Description" type="dcml:UserTextType" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element name="InputDescriptor" type="dcml:UserTextType" minOccurs="0" maxOccurs="1"/>
             <xs:element name="OutputDescriptor" type="dcml:UserTextType" minOccurs="0" maxOccurs="1"/>
             <xs:element ref="clf:Info" minOccurs="0" maxOccurs="1"/>
             <xs:element ref="clf:ProcessNode" minOccurs="1" maxOccurs="unbounded"/>
         </xs:sequence>
+        <xs:attribute name="id" type="dcml:UUIDType" use="required"/>
         <xs:attribute name="compCLFversion" type="xs:string" use="optional"/><!-- deprecated, CLF version is signalled by the schama URI -->
         <xs:attribute name="name" type="xs:string" use="optional"/>
         <xs:attribute name="inverseOf" type="dcml:UUIDType" use="optional"/>
@@ -58,9 +58,9 @@
     <xs:element name="ProcessNode" type="clf:ProcessNodeType"/>
     <xs:complexType name="ProcessNodeType" abstract="true">
         <xs:sequence>
-            <xs:element name="Id" type="dcml:UUIDType"/>
             <xs:element name="Description" type="dcml:UserTextType" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
+        <xs:attribute name="id" type="dcml:UUIDType" use="required"/>
         <xs:attribute name="name" type="xs:string" use="optional"/>
         <xs:attribute name="inBitDepth" type="clf:bitDepthType" use="required"/>
         <xs:attribute name="outBitDepth" type="clf:bitDepthType" use="required"/>

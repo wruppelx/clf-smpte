@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ProcessList xmlns:dcml="http://www.smpte-ra.org/schemas/433/2008/dcmlTypes" xmlns="http://www.smpte-ra.org/ns/2136/2023" compCLFversion="3.0">
-    <Id>urn:uuid:c40f8045-2451-48d4-ac6c-0223cddae10c</Id>
+<ProcessList xmlns="http://www.smpte-ra.org/ns/2136/2023" id="urn:uuid:c40f8045-2451-48d4-ac6c-0223cddae10c">
     <Description>There must be at least on process node</Description>
 </ProcessList>

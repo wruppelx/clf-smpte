@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ProcessList xmlns:dcml="http://www.smpte-ra.org/schemas/433/2008/dcmlTypes" xmlns="http://www.smpte-ra.org/ns/2136/2023" compCLFversion="3.0">
-    <Id>urn:uuid:5fc6f869-dd69-4193-a7c4-dd9bdd5c8c7b</Id>
+<ProcessList xmlns="http://www.smpte-ra.org/ns/2136/2023" id="urn:uuid:5fc6f869-dd69-4193-a7c4-dd9bdd5c8c7b">
     <Description>ProcessList must have an end tag</Description>
-    <Matrix inBitDepth="32f" outBitDepth="32f">
-        <Id>urn:uuid:3e61670c-6980-43ff-9225-e0c1081030cf</Id>
+    <Matrix inBitDepth="32f" outBitDepth="32f" id="urn:uuid:3e61670c-6980-43ff-9225-e0c1081030cf">
         <Array dim="3 3">
  3.24000 -1.53700 -0.49850
 -0.96930  1.87600  0.04156

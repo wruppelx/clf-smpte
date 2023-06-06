@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ProcessList xmlns:dcml="http://www.smpte-ra.org/schemas/433/2008/dcmlTypes" name="matrix example" xmlns="http://www.smpte-ra.org/ns/2136/2023" compCLFversion="3.0">
-    <Id>urn:uuid:0fbdcd25-8ef1-4b42-8ddd-52fd64a3ca6b</Id>
+<ProcessList name="matrix example" xmlns="http://www.smpte-ra.org/ns/2136/2023" id="urn:uuid:0fbdcd25-8ef1-4b42-8ddd-52fd64a3ca6b">
     <Description>Test utf8 character encoding support.</Description>
-    <Matrix inBitDepth="32f" outBitDepth="32f">
-        <Id>urn:uuid:6de56bd8-fb70-4adc-b975-6ff712c8a8ae</Id>
+    <Matrix inBitDepth="32f" outBitDepth="32f" id="urn:uuid:6de56bd8-fb70-4adc-b975-6ff712c8a8ae">
         <Description>標準萬國碼</Description>
         <Array dim="3 3">
     0.66067963  0.13364476  0.15567561

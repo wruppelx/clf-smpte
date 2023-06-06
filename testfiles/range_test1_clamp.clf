@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ProcessList xmlns:dcml="http://www.smpte-ra.org/schemas/433/2008/dcmlTypes" xmlns="http://www.smpte-ra.org/ns/2136/2023" compCLFversion="3.0">
-    <Id>urn:uuid:a078dc48-7d2f-4626-8319-faee64740493</Id>
+<ProcessList xmlns="http://www.smpte-ra.org/ns/2136/2023" id="urn:uuid:a078dc48-7d2f-4626-8319-faee64740493">
     <Description>Basic range example</Description>
-    <Range inBitDepth="8i" outBitDepth="32f" style="Clamp">
-        <Id>urn:uuid:e0b08943-8f7d-4db3-9aa7-2aa079fa4d60</Id>
+    <Range inBitDepth="8i" outBitDepth="32f" style="Clamp" id="urn:uuid:e0b08943-8f7d-4db3-9aa7-2aa079fa4d60">
         <minInValue>16</minInValue>
         <minOutValue>-0.5</minOutValue>
         <maxInValue>240</maxInValue>

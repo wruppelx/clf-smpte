@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ProcessList xmlns:dcml="http://www.smpte-ra.org/schemas/433/2008/dcmlTypes" xmlns="http://www.smpte-ra.org/ns/2136/2023" compCLFversion="3.0">
-    <Id>urn:uuid:422eb80c-3f29-4940-8b5f-10c62fab7288</Id>
-    <Matrix inBitDepth="32f" outBitDepth="32f">
-        <Id>urn:uuid:9aedaac3-18ba-4d23-a4ea-73d4c650a23e</Id>
+<ProcessList xmlns="http://www.smpte-ra.org/ns/2136/2023" id="urn:uuid:422eb80c-3f29-4940-8b5f-10c62fab7288">
+    <Matrix inBitDepth="32f" outBitDepth="32f" id="urn:uuid:9aedaac3-18ba-4d23-a4ea-73d4c650a23e">
         <Description>Array has a non-numeric character</Description>
         <Array dim="3 3">
  3.24000 -1.53700 -0.49850

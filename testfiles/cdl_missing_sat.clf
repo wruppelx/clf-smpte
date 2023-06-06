@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ProcessList xmlns:dcml="http://www.smpte-ra.org/schemas/433/2008/dcmlTypes" xmlns="http://www.smpte-ra.org/ns/2136/2023" compCLFversion="3.0">
-   <Id>urn:uuid:bcd70e85-a7f9-4dfd-a8d8-4fcf2bf6e4f9</Id>
+<ProcessList xmlns="http://www.smpte-ra.org/ns/2136/2023" id="urn:uuid:bcd70e85-a7f9-4dfd-a8d8-4fcf2bf6e4f9">
    <Description>Missing Sat defaults to 1</Description>
-   <ASC_CDL inBitDepth="32f" outBitDepth="16f" style="Fwd">
-      <Id>urn:uuid:ea96d3ee-0d4d-46a3-bc40-54e7ca4bf17c</Id>
+   <ASC_CDL inBitDepth="32f" outBitDepth="16f" style="Fwd" id="urn:uuid:ea96d3ee-0d4d-46a3-bc40-54e7ca4bf17c">
       <Description>ASC CDL operation</Description>
       <SOPNode>
           <Slope>1.35 1.1 0.71</Slope>

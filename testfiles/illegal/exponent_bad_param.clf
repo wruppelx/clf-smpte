@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ProcessList xmlns:dcml="http://www.smpte-ra.org/schemas/433/2008/dcmlTypes" compCLFversion="3.0" xmlns="http://www.smpte-ra.org/ns/2136/2023">
-    <Id>urn:uuid:6451eec9-d027-452b-9bcb-1ea2b31e40a8</Id>
+<ProcessList xmlns="http://www.smpte-ra.org/ns/2136/2023" id="urn:uuid:6451eec9-d027-452b-9bcb-1ea2b31e40a8">
     <Description>The basic styles may not use the offset param</Description>
-    <Exponent inBitDepth="16f" outBitDepth="8i" style="basicFwd">
-        <Id>urn:uuid:fbf8e49f-a146-49e1-bbcf-ba16909b2db2</Id>
+    <Exponent inBitDepth="16f" outBitDepth="8i" style="basicFwd" id="urn:uuid:fbf8e49f-a146-49e1-bbcf-ba16909b2db2">
         <ExponentParams exponent="2.2" offset="0.1" />
     </Exponent>
 </ProcessList>

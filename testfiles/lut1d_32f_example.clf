@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ProcessList xmlns:dcml="http://www.smpte-ra.org/schemas/433/2008/dcmlTypes" xmlns="http://www.smpte-ra.org/ns/2136/2023" name="transform example lut1d 32f" compCLFversion="3.0">
-<Id>urn:uuid:c39ca01f-1199-41e4-8c22-7a6b8fac6b40</Id>
+<ProcessList xmlns="http://www.smpte-ra.org/ns/2136/2023" name="transform example lut1d 32f" id="urn:uuid:c39ca01f-1199-41e4-8c22-7a6b8fac6b40">
 <Description> Basic Lut1D example, formula: 1.25 - 1.5 * x^2.2</Description>
-<LUT1D interpolation="linear" inBitDepth="32f" outBitDepth="32f">
-<Id>urn:uuid:2dd5b745-1d02-45bf-bdbc-482c3057c264</Id>
+<LUT1D interpolation="linear" inBitDepth="32f" outBitDepth="32f" id="urn:uuid:2dd5b745-1d02-45bf-bdbc-482c3057c264">
 <Description> 1D LUT </Description>
 <Array dim="65 1">
 1.25 1.2498406  1.24926758 1.24821285 1.24663467 1.24450169 1.24178839 1.23847314 1.23453702 1.22996318 1.2247364  1.21884274 1.21226937 1.20500433

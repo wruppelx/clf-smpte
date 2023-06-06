@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ProcessList xmlns:dcml="http://www.smpte-ra.org/schemas/433/2008/dcmlTypes" xmlns="http://www.smpte-ra.org/ns/2136/2023" compCLFversion="3.0">
-    <Id>urn:uuid:8837840f-7e9d-4d04-90c0-da5dede5b7a2</Id>
+<ProcessList xmlns="http://www.smpte-ra.org/ns/2136/2023" id="urn:uuid:8837840f-7e9d-4d04-90c0-da5dede5b7a2">
     <Description>The noClamp style may not be used when there are only two values.</Description>
-    <Range inBitDepth="32f" outBitDepth="16f" style="noClamp">
-        <Id>urn:uuid:22995956-be7b-4c09-804c-9e7e56cf3974</Id>
+    <Range inBitDepth="32f" outBitDepth="16f" style="noClamp" id="urn:uuid:22995956-be7b-4c09-804c-9e7e56cf3974">
         <minInValue>     1e-1        </minInValue>
         <minOutValue>     1e-1        </minOutValue>
         <maxInValue> 0.1 </maxInValue>

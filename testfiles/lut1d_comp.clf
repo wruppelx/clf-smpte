@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ProcessList xmlns:dcml="http://www.smpte-ra.org/schemas/433/2008/dcmlTypes" xmlns="http://www.smpte-ra.org/ns/2136/2023" compCLFversion="3.0" >
-    <Id>urn:uuid:4f4a1381-827e-412e-a746-0dfe49e7c0ac</Id>
+<ProcessList xmlns="http://www.smpte-ra.org/ns/2136/2023" id="urn:uuid:4f4a1381-827e-412e-a746-0dfe49e7c0ac">
     <Description>Two Lut1D ops</Description>
-    <LUT1D inBitDepth="8i" outBitDepth="8i">
-        <Id>urn:uuid:9f263763-ae21-4692-9550-47386209d078</Id>
+    <LUT1D inBitDepth="8i" outBitDepth="8i" id="urn:uuid:9f263763-ae21-4692-9550-47386209d078">
         <Description>Linear spacing between 64 and 196</Description>
         <Array dim="23 1">
 64 70 76 82 88 94 100 106 112 118 124 130 136 142 148 154 160 166 172 178 184 190 196
         </Array>
     </LUT1D>
-    <LUT1D inBitDepth="8i" outBitDepth="32f">
-        <Id>urn:uuid:9ececaef-fcee-411f-9736-1cdf47245d8a</Id>
+    <LUT1D inBitDepth="8i" outBitDepth="32f" id="urn:uuid:9ececaef-fcee-411f-9736-1cdf47245d8a">
         <Array dim="128 3">
  0.00000  0.00000  0.00000
  0.06780  0.06441  0.06102

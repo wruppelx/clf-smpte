@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ProcessList xmlns:dcml="http://www.smpte-ra.org/schemas/433/2008/dcmlTypes" xmlns="http://www.smpte-ra.org/ns/2136/2023" name="transform example matrix" compCLFversion="3.0">
-<Id>urn:uuid:5dd79c9e-cef5-456f-8538-628bc261af78</Id>
+<ProcessList xmlns="http://www.smpte-ra.org/ns/2136/2023" name="transform example matrix" id="urn:uuid:5dd79c9e-cef5-456f-8538-628bc261af78">
 <Description> Matrix example </Description>
 <Description> Used by unit tests </Description>
-<Matrix name="colorspace conversion" inBitDepth="10i" outBitDepth="12i" >
-<Id>urn:uuid:9e2dbed8-24ba-4489-b90f-3e939a4b287f</Id>
+<Matrix name="colorspace conversion" inBitDepth="10i" outBitDepth="12i" id="urn:uuid:9e2dbed8-24ba-4489-b90f-3e939a4b287f">
 <Description> 3x4 Matrix , 4th column is offset </Description>
 <Array dim="3 4">
 3.6    0.1 -0.2       0.3

@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ProcessList xmlns:dcml="http://www.smpte-ra.org/schemas/433/2008/dcmlTypes" xmlns="http://www.smpte-ra.org/ns/2136/2023" compCLFversion="3.0">
-    <Id>urn:uuid:8c814307-f765-436c-b06d-77bca563c6ee</Id>
+<ProcessList xmlns="http://www.smpte-ra.org/ns/2136/2023" id="urn:uuid:8c814307-f765-436c-b06d-77bca563c6ee">
     <Description>Example with a Matrix and Lut1D</Description>
-    <Matrix inBitDepth="32f" outBitDepth="32f">
-        <Id>urn:uuid:3460ca7c-01e7-4d48-9bde-f05de5536f4f</Id>
+    <Matrix inBitDepth="32f" outBitDepth="32f" id="urn:uuid:3460ca7c-01e7-4d48-9bde-f05de5536f4f">
         <Description>XYZ to sRGB matrix</Description>
         <Array dim="3 3">
  3.24000 -1.53700 -0.49850
@@ -11,16 +9,14 @@
  0.05560 -0.20400  1.05730
         </Array>
     </Matrix>
-    <Range inBitDepth="32f" outBitDepth="32f" style="Clamp">
-        <Id>urn:uuid:cfdbcfda-24ef-40a7-ae5c-a38672a50da2</Id>
+    <Range inBitDepth="32f" outBitDepth="32f" style="Clamp" id="urn:uuid:cfdbcfda-24ef-40a7-ae5c-a38672a50da2">
         <Description>This range is redundant since the Lut1D will clamp to [0,1] also</Description>
         <minInValue>0</minInValue>
         <minOutValue>0</minOutValue>
         <maxInValue>1</maxInValue>
         <maxOutValue>1</maxOutValue>
     </Range>
-    <LUT1D inBitDepth="32f" outBitDepth="32f">
-        <Id>urn:uuid:0fb0801f-d820-4bf0-877b-88593bacd20e</Id>
+    <LUT1D inBitDepth="32f" outBitDepth="32f" id="urn:uuid:0fb0801f-d820-4bf0-877b-88593bacd20e">
         <Description>x^1/1.8, with 0.95 and 0.9 scaling for G and B</Description>
         <Array dim="128 3">
  0.00000  0.00000  0.00000

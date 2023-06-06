@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ProcessList xmlns:dcml="http://www.smpte-ra.org/schemas/433/2008/dcmlTypes" xmlns="http://www.smpte-ra.org/ns/2136/2023:v0.95" compCLFversion="3.0">
+<ProcessList xmlns="http://www.smpte-ra.org/ns/2136/2023" id="urn:uuid:502ec5b5-dc4e-4162-9ff2-6846fc333c94">
     <Description>This example contains unknown elements</Description>
     <Description>See section 5.4 of the spec: Unrecognized elements that are not children of the Info element 
                  should either raise an error or at least provide a warning message</Description>
-    <Matrix inBitDepth="32f" outBitDepth="32f">
-        <Id>urn:uuid:b7e6bfc6-6c85-452c-88d9-c74fc1410c82</Id>
+    <Matrix inBitDepth="32f" outBitDepth="32f" id="urn:uuid:b7e6bfc6-6c85-452c-88d9-c74fc1410c82">
         <Array dim="3 3 3">
  3.24000 -1.53700 -0.49850
 -0.96930  1.87600  0.04156
  0.05560 -0.20400  1.05730
         </Array>
     </Matrix>
-    <LUT1D inBitDepth="32f" outBitDepth="32f">
-        <Id>urn:uuid:bec20570-dfa3-488f-8941-4976566c21c8</Id>
+    <LUT1D inBitDepth="32f" outBitDepth="32f" id="urn:uuid:bec20570-dfa3-488f-8941-4976566c21c8">
         <Array dim="17 3">
  0.00000  0.00000  1e-2
  0.28358  0.28358  1e+2
@@ -34,8 +32,7 @@
         </Array>
     </LUT1D>
     <B>Some test<C dim="32 1">More test</C>Even more text</B>
-    <LUT1D inBitDepth="32f" outBitDepth="10i">
-        <Id>urn:uuid:15cefade-f709-4afe-a48e-af1653210742</Id>
+    <LUT1D inBitDepth="32f" outBitDepth="10i" id="urn:uuid:15cefade-f709-4afe-a48e-af1653210742">
         <Description>		linear to 1/2.2 gamma <A>corrected</A> code values</Description>
         <Array dim="32 1">
    0
@@ -72,8 +69,7 @@
 1023
         </Array>
     </LUT1D>
-    <LUT3D inBitDepth="10i" outBitDepth="10i">
-        <Id>urn:uuid:84aa6d4b-7dd7-4b53-b7d0-3ff654c0fdef</Id>
+    <LUT3D inBitDepth="10i" outBitDepth="10i" id="urn:uuid:84aa6d4b-7dd7-4b53-b7d0-3ff654c0fdef">
         <Array dim="3 3 3 3">
    0   30   33
    0    0  133

@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ProcessList xmlns:dcml="http://www.smpte-ra.org/schemas/433/2008/dcmlTypes" xmlns="http://www.smpte-ra.org/ns/2136/2023" compCLFversion="3.0">
-   <Id>urn:uuid:d58efb8b-1fbd-4ba5-9ed5-e335a56edcd1</Id>
+<ProcessList xmlns="http://www.smpte-ra.org/ns/2136/2023" id="urn:uuid:d58efb8b-1fbd-4ba5-9ed5-e335a56edcd1">
    <Description>Sat may only have 1 value.</Description>
-   <ASC_CDL inBitDepth="32f" outBitDepth="16f" style="Fwd">
-      <Id>urn:uuid:eef9acbd-60d7-4823-b34a-177f438f33a4</Id>
+   <ASC_CDL inBitDepth="32f" outBitDepth="16f" style="Fwd" id="urn:uuid:eef9acbd-60d7-4823-b34a-177f438f33a4">
       <SOPNode>
           <Slope>1.35 1.1 0.71</Slope>
           <Offset>0.05 -0.23 0.11</Offset>

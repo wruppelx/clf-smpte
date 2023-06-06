@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ProcessList xmlns:dcml="http://www.smpte-ra.org/schemas/433/2008/dcmlTypes" compCLFversion="3.0" xmlns="http://www.smpte-ra.org/ns/2136/2023">
-    <Id>urn:uuid:14fbc2c2-87c1-4115-8776-87f32b97800f</Id>
+<ProcessList  xmlns="http://www.smpte-ra.org/ns/2136/2023" id="urn:uuid:14fbc2c2-87c1-4115-8776-87f32b97800f">
     <Description>The camera styles must have the linSideBreak param.</Description>
-    <Log inBitDepth="16f" outBitDepth="16f" style="cameraLogToLin">
-        <Id>urn:uuid:72ec6142-de5a-494f-97df-763f90d40932</Id>
+    <Log inBitDepth="16f" outBitDepth="16f" style="cameraLogToLin" id="urn:uuid:72ec6142-de5a-494f-97df-763f90d40932">
         <LogParams logSideSlope="0.29325513196" logSideOffset="0.66959921799" 
                    linSideSlope="0.98920224838" linSideOffset="0.01079775162" base="10" />
     </Log>

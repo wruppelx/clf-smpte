@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ProcessList xmlns:dcml="http://www.smpte-ra.org/schemas/433/2008/dcmlTypes" xmlns="http://www.smpte-ra.org/ns/2136/2023" compCLFversion="3.0">
-    <Id>urn:uuid:de1705b8-1bfa-4496-84a1-7df115ff6a1a</Id>
+<ProcessList xmlns="http://www.smpte-ra.org/ns/2136/2023" id="urn:uuid:de1705b8-1bfa-4496-84a1-7df115ff6a1a">
     <Description>Index map was only allowed up to CLF v2</Description>
-    <LUT3D inBitDepth="32f" outBitDepth="10i">
-        <Id>urn:uuid:67eaab97-b53b-44f1-adbe-755a9f52b293</Id>
+    <LUT3D inBitDepth="32f" outBitDepth="10i" id="urn:uuid:67eaab97-b53b-44f1-adbe-755a9f52b293">
         <Array dim="2 2 2 3">
    0   30   33
    0    0  133
