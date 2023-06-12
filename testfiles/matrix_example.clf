@@ -6,7 +6,7 @@
     <Matrix inBitDepth="32f" outBitDepth="32f" id="urn:uuid:90505e83-2494-4d54-8b0a-b8a273930691">
         <Description>Legacy matrix</Description>
         <Description>Note that dim="3 3 3" should be supported for CLF v2 compatibility</Description>
-        <Array dim="3 3 3">
+        <Array dim="3 3">
 0.41239080  0.35758434  0.18048079
 0.21263901  0.71516868  0.07219232
 0.01933082  0.01191948  0.95053215

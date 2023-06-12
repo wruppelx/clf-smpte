@@ -36,7 +36,7 @@
             <xs:element name="ACEStransformID" type="clf:URNType" minOccurs="0" maxOccurs="1"/>
             <xs:element name="ACESuserName" type="dcml:UserTextType" minOccurs="0" maxOccurs="1"/>
             <xs:element ref="clf:CalibrationInfo" minOccurs="0" maxOccurs="1"/>
-            <xs:any namespace="##other" minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
+            <xs:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
         </xs:sequence>
         <xs:anyAttribute processContents="lax"/>
     </xs:complexType>
@@ -78,6 +78,12 @@
                 <xs:attribute name="interpolation" use="optional" fixed="linear" type="xs:string"/>
                 <xs:attribute name="rawHalfs" type="xs:string" use="optional" fixed="true"/>
                 <xs:attribute name="halfDomain" type="xs:string" use="optional" fixed="true"/>
+                <!-- If halfDomain=true then the Array shall be of dim="65536 1" -->
+                <!-- Assert does not work yet, how to access $value in sub-element Array? -->
+                <xs:assert test="
+                if (@halfDomain eq 'true') then (Array/count($value) = 65536) else
+                                    true()
+                "/>
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
@@ -251,7 +257,7 @@
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-
+    
     <!--  ProcessNode: Matrix definition  -->
     <xs:element name="Matrix" type="clf:MatrixType" substitutionGroup="clf:ProcessNode"/>
     <xs:complexType name="MatrixType">
@@ -267,6 +273,18 @@
         <xs:simpleContent>
             <xs:extension base="clf:floatListType">
                 <xs:attribute name="dim" type="clf:dimType" use="required"/>
+                <!-- Test for number of elements in LUT1D and LUT3D -->
+                <xs:assert test="
+                (
+                count($value) = number(substring-before(@dim, ' ')) * 
+                                number(substring-before(substring-after(@dim, ' '), ' ')) * 
+                                number(substring-before(substring-after(substring-after(@dim, ' '), ' '), ' ')) *
+                                number(substring-after(substring-after(substring-after(@dim, ' '), ' '), ' '))
+                ) or (
+                count($value) = number(substring-before(@dim, ' ')) * 
+                                number(substring-after(@dim, ' '))
+                )
+                "/>
             </xs:extension>
         </xs:simpleContent>
     </xs:complexType>
@@ -283,6 +301,11 @@
                         </xs:restriction>
                     </xs:simpleType>
                 </xs:attribute>
+                <!-- Test for number of elements in matrices -->
+                <xs:assert test="
+                ((@dim = '3 3') and (count($value) = 9)) or
+                ((@dim = '3 4') and (count($value) = 12))
+                "/>
             </xs:extension>
         </xs:simpleContent>
     </xs:complexType>

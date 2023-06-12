@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ProcessList inverseOf="urn:uuid:4febdce4-81fe-4f8c-a609-c883bb57bc0a" xmlns="http://www.smpte-ra.org/ns/2136/2023" id="urn:uuid:0d982b16-2fe0-4151-adb3-a39bbccdec2c">
+<ProcessList inverseOf="urn:uuid:4febdce4-81fe-4f8c-a609-c883bb57bc0a" xmlns="http://www.smpte-ra.org/ns/2136/2023" id="urn:uuid:0d982b16-2fe0-4151-adb3-a39bbccdec2c" xmlns:xyz="otherNamespace">
     <Description>Example of using the Info element</Description>
     <Description>A second description</Description>
     <InputDescriptor>input desc</InputDescriptor>
@@ -11,23 +11,23 @@
         <Copyright>Copyright Contributors to the OpenColorIO Project.</Copyright>
         <Revision>1</Revision>
         <!-- Random app specific elements -->
-        <Category>
-            <Tags>
-                <SceneLinearWorkingSpace />
-                <Input />
-            </Tags>
-        </Category>
-        <InputColorSpace>
-            <Description>Input color space description</Description>
-            <ImageState>video</ImageState>
-            <ShortName>no_version</ShortName>
-            <ID>387b23d1-f1ce-3f69-8544-e5601f45f78b</ID>
-        </InputColorSpace>
-        <OutputColorSpace att1="test1" att2="test2">
-            <ImageState>scene</ImageState>
-            <ShortName>ACES</ShortName>
-            <ID>1</ID>
-        </OutputColorSpace>
+        <xyz:Category>
+            <xyz:Tags>
+                <xyz:SceneLinearWorkingSpace />
+                <xyz:Input />
+            </xyz:Tags>
+        </xyz:Category>
+        <xyz:InputColorSpace>
+            <xyz:Description>Input color space description</xyz:Description>
+            <xyz:ImageState>video</xyz:ImageState>
+            <xyz:ShortName>no_version</xyz:ShortName>
+            <xyz:ID>387b23d1-f1ce-3f69-8544-e5601f45f78b</xyz:ID>
+        </xyz:InputColorSpace>
+        <xyz:OutputColorSpace att1="test1" att2="test2">
+            <xyz:ImageState>scene</xyz:ImageState>
+            <xyz:ShortName>ACES</xyz:ShortName>
+            <xyz:ID>1</xyz:ID>
+        </xyz:OutputColorSpace>
     </Info>
 
     <Matrix outBitDepth="12i" inBitDepth="32f" name="identity" id="urn:uuid:a4dbcbe1-fec1-4be3-9662-bf4909d69d07">

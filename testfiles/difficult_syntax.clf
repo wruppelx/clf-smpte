@@ -5,13 +5,13 @@
 
 
 <!-- Comment -->
-    <ProcessList xmlns="http://www.smpte-ra.org/ns/2136/2023" id="urn:uuid:00a19bb5-d44f-432f-a274-d3927b02cbc3">
+    <ProcessList xmlns="http://www.smpte-ra.org/ns/2136/2023" id="urn:uuid:00a19bb5-d44f-432f-a274-d3927b02cbc3" xmlns:xyz="someNamespace">
     <Description>This is the ProcessList description.</Description>
     <Description>yet &apos;another&apos; &quot;valid&quot; desc</Description>
 <Info>
-    <Stuff>
+    <xyz:Stuff>
 This is a "difficult" but 'legal' color transform file.
-    </Stuff>
+    </xyz:Stuff>
 <!-- Comment -->
 <!-- Comment -->
 </Info>
@@ -22,7 +22,7 @@ third array dim value is ignored
 
 
 </Description>
-        <Array dim="3 3 3">
+        <Array dim="3 3">
  3.24000 -1.53700 -0.49850
 -0.96930  1.87600  +0.04156
  0.05560 -0.20400  0.105730e+1
