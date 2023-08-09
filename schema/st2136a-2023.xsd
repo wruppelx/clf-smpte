@@ -6,8 +6,8 @@
   xmlns:clf="http://www.smpte-ra.org/ns/2136/2023"
   xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning"
   vc:minVersion="1.0" elementFormDefault="qualified" attributeFormDefault="unqualified">
-  <xs:import namespace="http://www.w3.org/2000/09/xmldsig#" schemaLocation="xmldsig-core-schema.xsd"/>
-  <xs:import namespace="http://www.smpte-ra.org/schemas/433/2008/dcmlTypes" schemaLocation="dcmlTypes.xsd"/>
+  <xs:import namespace="http://www.w3.org/2000/09/xmldsig#"/>
+  <xs:import namespace="http://www.smpte-ra.org/schemas/433/2008/dcmlTypes"/>
 
 <!--  Process List definition  -->
 <xs:element name="ProcessList" type="clf:ProcessListType"/>
@@ -152,6 +152,43 @@
   </xs:complexContent>
 </xs:complexType>
 
+<!--  ProcessNode: Log definition  -->
+<xs:element name="Log" type="clf:LogType" substitutionGroup="clf:ProcessNode"/>
+<xs:complexType name="LogType">
+  <xs:complexContent>
+    <xs:extension base="clf:ProcessNodeType">
+      <xs:sequence>
+        <xs:element name="LogParams" type="clf:LogParamsType" minOccurs="0" maxOccurs="3"/>
+      </xs:sequence>
+      <xs:attribute name="style" use="required">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="log10"/>
+            <xs:enumeration value="antiLog10"/>
+            <xs:enumeration value="log2"/>
+            <xs:enumeration value="antiLog2"/>
+            <xs:enumeration value="linToLog"/>
+            <xs:enumeration value="logToLin"/>
+            <xs:enumeration value="cameraLinToLog"/>
+            <xs:enumeration value="cameraLogToLin"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:extension>
+  </xs:complexContent>
+</xs:complexType>
+<xs:complexType name="LogParamsType">
+  <xs:attribute name="base" type="xs:float" use="optional" default="10"/>
+  <xs:attribute name="logSideSlope" type="xs:float" use="optional" default="1.0"/>
+  <xs:attribute name="logSideOffset" type="xs:float" use="optional" default="0.0"/>
+  <xs:attribute name="linSideSlope" type="xs:float" use="optional" default="1.0"/>
+  <xs:attribute name="linSideOffset" type="xs:float" use="optional" default="0.0"/>
+  <xs:attribute name="linSideBreak" type="xs:float" use="optional" default="0.0"/>
+  <xs:attribute name="linearSlope" type="xs:float" use="optional"/>
+  <xs:attribute name="linearOffset" type="xs:float" use="optional"/>
+  <xs:attribute name="channel" type="clf:channelType" use="optional"/>
+</xs:complexType>
+
 <!--  ProcessNode: Exponent definition  -->
 <xs:element name="Exponent" type="clf:ExponentType" substitutionGroup="clf:ProcessNode"/>
 <xs:complexType name="ExponentType">
@@ -189,43 +226,6 @@
       </xs:restriction>
     </xs:simpleType>
   </xs:attribute>
-  <xs:attribute name="channel" type="clf:channelType" use="optional"/>
-</xs:complexType>
-
-<!--  ProcessNode: Log definition  -->
-<xs:element name="Log" type="clf:LogType" substitutionGroup="clf:ProcessNode"/>
-<xs:complexType name="LogType">
-  <xs:complexContent>
-    <xs:extension base="clf:ProcessNodeType">
-      <xs:sequence>
-        <xs:element name="LogParams" type="clf:LogParamsType" minOccurs="0" maxOccurs="3"/>
-      </xs:sequence>
-      <xs:attribute name="style" use="required">
-        <xs:simpleType>
-          <xs:restriction base="xs:string">
-            <xs:enumeration value="log10"/>
-            <xs:enumeration value="antiLog10"/>
-            <xs:enumeration value="log2"/>
-            <xs:enumeration value="antiLog2"/>
-            <xs:enumeration value="linToLog"/>
-            <xs:enumeration value="logToLin"/>
-            <xs:enumeration value="cameraLinToLog"/>
-            <xs:enumeration value="cameraLogToLin"/>
-          </xs:restriction>
-        </xs:simpleType>
-      </xs:attribute>
-    </xs:extension>
-  </xs:complexContent>
-</xs:complexType>
-<xs:complexType name="LogParamsType">
-  <xs:attribute name="base" type="xs:float" use="optional" default="10"/>
-  <xs:attribute name="logSideSlope" type="xs:float" use="optional" default="1.0"/>
-  <xs:attribute name="logSideOffset" type="xs:float" use="optional" default="0.0"/>
-  <xs:attribute name="linSideSlope" type="xs:float" use="optional" default="1.0"/>
-  <xs:attribute name="linSideOffset" type="xs:float" use="optional" default="0.0"/>
-  <xs:attribute name="linSideBreak" type="xs:float" use="optional" default="0.0"/>
-  <xs:attribute name="linearSlope" type="xs:float" use="optional"/>
-  <xs:attribute name="linearOffset" type="xs:float" use="optional"/>
   <xs:attribute name="channel" type="clf:channelType" use="optional"/>
 </xs:complexType>
 
