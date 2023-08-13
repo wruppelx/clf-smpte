@@ -195,7 +195,7 @@
   <xs:complexContent>
     <xs:extension base="clf:ProcessNodeType">
       <xs:sequence>
-        <xs:element name="ExponentParams" type="clf:ExponentParamsType" minOccurs="0" maxOccurs="3"/>
+        <xs:element name="ExponentParams" type="clf:ExponentParamsType" maxOccurs="3"/>
       </xs:sequence>
       <xs:attribute name="style" use="required">
         <xs:simpleType>

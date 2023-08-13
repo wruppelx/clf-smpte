@@ -202,7 +202,7 @@
   <xs:complexContent>
     <xs:extension base="clf:ProcessNodeType">
       <xs:sequence>
-        <xs:element name="ExponentParams" type="clf:ExponentParamsType" minOccurs="0" maxOccurs="3"/>
+        <xs:element name="ExponentParams" type="clf:ExponentParamsType" maxOccurs="3"/>
       </xs:sequence>
       <xs:attribute name="style" use="required">
         <xs:simpleType>
@@ -220,6 +220,37 @@
           </xs:restriction>
         </xs:simpleType>
       </xs:attribute>
+      <xs:assert test="
+      if (count(./clf:ExponentParams) eq 1) then (
+        ((substring(@style, 1, 5) = 'basic') and not(exists(./clf:ExponentParams/@offset))) or
+        ((substring(@style, 1, 8) = 'monCurve')
+        and exists(./clf:ExponentParams/@offset)
+        and (./clf:ExponentParams/@exponent &gt;= 1.0)
+        and (./clf:ExponentParams/@exponent &lt;= 10.0))
+      )
+      else if (count(./clf:ExponentParams) eq 3) then (
+        (
+          ((substring(@style, 1, 5) = 'basic') and not(exists(./clf:ExponentParams[*]/@offset))) or
+          ((substring(@style, 1, 8) = 'monCurve')
+          and exists(./clf:ExponentParams[1]/@offset)
+          and exists(./clf:ExponentParams[2]/@offset)
+          and exists(./clf:ExponentParams[3]/@offset)
+          and (./clf:ExponentParams[1]/@exponent &gt;= 1.0)
+          and (./clf:ExponentParams[1]/@exponent &lt;= 10.0)
+          and (./clf:ExponentParams[2]/@exponent &gt;= 1.0)
+          and (./clf:ExponentParams[2]/@exponent &lt;= 10.0)
+          and (./clf:ExponentParams[3]/@exponent &gt;= 1.0)
+          and (./clf:ExponentParams[3]/@exponent &lt;= 10.0)
+          )
+        ) and exists(./clf:ExponentParams[1]/@channel) 
+          and exists(./clf:ExponentParams[2]/@channel) 
+          and exists(./clf:ExponentParams[3]/@channel)
+          and (./clf:ExponentParams[1]/@channel != ./clf:ExponentParams[2]/@channel)
+          and (./clf:ExponentParams[1]/@channel != ./clf:ExponentParams[3]/@channel)
+          and (./clf:ExponentParams[2]/@channel != ./clf:ExponentParams[3]/@channel)
+      )
+      else false()
+      "/>
     </xs:extension>
   </xs:complexContent>
 </xs:complexType>
