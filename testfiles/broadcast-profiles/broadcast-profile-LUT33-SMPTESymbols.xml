@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ProcessList name="SMPTE Example Live Broadcast LUT33 10-bit Profile" 
+xmlns="http://www.smpte-ra.org/ns/2136/2023" 
+xmlns:clf="http://www.smpte-ra.org/ns/2136/2023" 
+xmlns:bplut33="http://www.smpte-ra.org/ns/2136/2023#Live_Broadcast_LUT33_10-bit"
+id="urn:uuid:b0454eca-cffa-4745-b85d-773d95cfba9c">
+
+	<Profile>http://www.smpte-ra.org/ns/2136/2023#Live_Broadcast_LUT33_10-bit</Profile>
+
+    <Description>Demo 33 cubed LUT with dummy values</Description>
+
+    <Info>
+        <AppRelease>SMPTE_10E_Example</AppRelease>
+        <Copyright>SMPTE MMXXIV</Copyright>
+        <Revision>1.0</Revision>
+        <InputFullRangeVideoH273>true</InputFullRangeVideoH273>
+        <InputPrimariesH273>ColorPrimaries_ITU709</InputPrimariesH273>
+        <InputMatrixCoefficientsH273>CodingEquations_ITU709</InputMatrixCoefficientsH273>
+        <InputTransferFunctionH273>TransferCharacteristic_ITU709</InputTransferFunctionH273>
+        <OutputFullRangeVideoH273>true</OutputFullRangeVideoH273>
+        <OutputPrimariesH273>ColorPrimaries_ITU470_PAL</OutputPrimariesH273>
+        <OutputMatrixCoefficientsH273>CodingEquations_ITU601</OutputMatrixCoefficientsH273>		    
+        <OutputTransferFunctionH273>TransferCharacteristic_ITU1361</OutputTransferFunctionH273>
+        <Keywords>Test LUT, Scene Referred</Keywords>
+    </Info>
+    
+    <Range inBitDepth="32f" outBitDepth="32f" id="urn:uuid:d942d8ca-3387-40da-a198-250571d645bd">
+        <Description>Note that when style is missing, the default is to clamp.</Description>
+        <minInValue>0.0</minInValue>
+        <minOutValue>0.0</minOutValue>
+        <maxInValue>1.0</maxInValue>
+        <maxOutValue>1.0</maxOutValue>
+    </Range>
+    <LUT3D name="Linear LUT 3D" interpolation="tetrahedral" inBitDepth="32f" outBitDepth="32f" id="urn:uuid:781115c9-7c6c-4fed-8950-84bf2bdfdcb4">  
+        <Description>3d-LUT with extended range values</Description>  
+        <Array dim="33 33 33 3">
+            0.000000 0.000000 0.000000
+            0.000000 0.000000 0.031250
+            0.000000 0.000000 0.062500
+            0.000000 0.000000 0.093750
+            <!-- ...      ...      ...      Multiple rows removed for brevity in example -->
+            1.000000 1.000000 0.906250
+            1.000000 1.000000 0.937500
+            1.000000 1.000000 0.968750
+            1.000000 1.000000 1.000000
+        </Array>
+    </LUT3D>
+</ProcessList>

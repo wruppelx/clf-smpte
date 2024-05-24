@@ -13,10 +13,10 @@
 <xs:element name="ProcessList" type="clf:ProcessListType"/>
 <xs:complexType name="ProcessListType">
   <xs:sequence>
-    <xs:element name="Profile" type="dcml:UserTextType" minOccurs="0" maxOccurs="1"/>
-    <xs:element name="Description" type="dcml:UserTextType" minOccurs="0" maxOccurs="unbounded"/>
-    <xs:element name="InputDescriptor" type="dcml:UserTextType" minOccurs="0" maxOccurs="1"/>
-    <xs:element name="OutputDescriptor" type="dcml:UserTextType" minOccurs="0" maxOccurs="1"/>
+    <xs:element ref="clf:Profile" minOccurs="0" maxOccurs="1"/>
+    <xs:element ref="clf:Description" minOccurs="0" maxOccurs="unbounded"/>
+    <xs:element ref="clf:InputDescriptor" minOccurs="0" maxOccurs="1"/>
+    <xs:element ref="clf:OutputDescriptor" minOccurs="0" maxOccurs="1"/>
     <xs:element ref="clf:Info" minOccurs="0" maxOccurs="1"/>
     <xs:element ref="clf:ProcessNode" minOccurs="1" maxOccurs="unbounded"/>
   </xs:sequence>
@@ -25,6 +25,12 @@
   <xs:attribute name="name" type="xs:string" use="optional"/>
   <xs:attribute name="inverseOf" type="dcml:UUIDType" use="optional"/>
 </xs:complexType>
+
+<!-- Elements used in ProcessList -->
+<xs:element name="Profile" type="dcml:UserTextType"/>
+<xs:element name="Description" type="dcml:UserTextType"/>
+<xs:element name="InputDescriptor" type="dcml:UserTextType"/>
+<xs:element name="OutputDescriptor" type="dcml:UserTextType"/>
 
 <!--  Info element definition  -->
 <xs:element name="Info" type="clf:InfoType"/>

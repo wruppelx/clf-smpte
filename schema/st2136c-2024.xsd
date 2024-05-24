@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  Type redefinitions for ST 2136 brodcast profiles  -->
+<xs:schema targetNamespace="http://www.smpte-ra.org/ns/2136/2023"
+  xmlns="http://www.smpte-ra.org/ns/2136/2023"
+  xmlns:clf="http://www.smpte-ra.org/ns/2136/2023"
+  xmlns:dcml="http://www.smpte-ra.org/schemas/433/2008/dcmlTypes"
+  xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning"
+  vc:minVersion="1.0" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <xs:import namespace="http://www.w3.org/2000/09/xmldsig#"/>
+  <xs:import namespace="http://www.smpte-ra.org/schemas/433/2008/dcmlTypes"/>
+
+<xs:redefine schemaLocation="st2136b-2024.xsd">
+<!--  InfoType redefinition  -->
+  <xs:complexType name="InfoType">
+    <xs:complexContent>
+      <xs:extension base="clf:InfoType">
+        <xs:sequence>
+          <xs:element name="InputFullRangeVideoH273" type="xs:boolean" minOccurs="1" maxOccurs="1"/>
+          <xs:element name="InputPrimariesH273" type="dcml:UserTextType" minOccurs="1" maxOccurs="1"/>
+          <xs:element name="InputMatrixCoefficientsH273" type="dcml:UserTextType" minOccurs="1" maxOccurs="1"/>
+          <xs:element name="InputTransferFunctionH273" type="dcml:UserTextType" minOccurs="1" maxOccurs="1"/>
+          <xs:element name="OutputFullRangeVideoH273" type="xs:boolean" minOccurs="1" maxOccurs="1"/>
+          <xs:element name="OutputPrimariesH273" type="dcml:UserTextType" minOccurs="1" maxOccurs="1"/>
+          <xs:element name="OutputMatrixCoefficientsH273" type="dcml:UserTextType" minOccurs="1" maxOccurs="1"/>
+          <xs:element name="OutputTransferFunctionH273" type="dcml:UserTextType" minOccurs="1" maxOccurs="1"/>
+          <xs:element name="Keywords" type="dcml:UserTextType" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+        <xs:anyAttribute processContents="lax"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+<!--  ProcessListType redefinition  -->
+  <xs:complexType name="ProcessListType">
+    <xs:complexContent>
+      <xs:extension base="clf:ProcessListType">
+        <xs:sequence>
+          <xs:element ref="clf:Profile" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="clf:Description" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="clf:InputDescriptor" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="clf:OutputDescriptor" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="clf:Info" minOccurs="0" maxOccurs="1"/>
+          <xs:element name="Range" type="clf:RangeType" minOccurs="0" maxOccurs="1"/>
+          <xs:element name="LUT1D" type="clf:LUT3DType" minOccurs="0" maxOccurs="1"/>
+          <xs:element name="LUT3D" type="clf:LUT3DType" minOccurs="1" maxOccurs="1"/>
+          <xs:element name="LUT1D" type="clf:LUT3DType" minOccurs="0" maxOccurs="1"/>
+          <xs:element name="Range" type="clf:RangeType" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:redefine>
+</xs:schema>
