@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ProcessList name="SMPTE Example Live Broadcast Advanced 10-bit Profile" xmlns="http://www.smpte-ra.org/ns/2136/2023" id="urn:uuid:b0454eca-cffa-4745-b85d-773d95cfba9c">  
+
+    <Profile>http://www.smpte-ra.org/ns/2136/2023#Live_Broadcast_Advanced_10-bit</Profile>
+
+    <Description>Demo Advanced Broadcast CLF with dummy values</Description>
+
+    <Info>
+        <AppRelease>SMPTE_10E_Example</AppRelease>
+        <Copyright>SMPTE MMXXIV</Copyright>
+        <Revision>1.0</Revision>
+        <InputFullRangeVideoBool>false</InputFullRangeVideoBool>
+        <InputColorPrimariesSMPTESymbol>ColorPrimaries_ITU709</InputColorPrimariesSMPTESymbol>
+        <InputCodingEquationsSMPTESymbol>CodingEquations_ITU709</InputCodingEquationsSMPTESymbol>        
+        <InputTransferCharacteristicSMPTESymbol>
+        	TransferCharacteristic_ITU709	
+        </InputTransferCharacteristicSMPTESymbol>
+        <OutputFullRangeVideoBool>false</OutputFullRangeVideoBool>
+        <OutputColorPrimariesSMPTESymbol>ColorPrimaries_ITU2020</OutputColorPrimariesSMPTESymbol>
+        <OutputCodingEquationsSMPTESymbol>CodingEquations_ITU2100_ICtCp</OutputCodingEquationsSMPTESymbol>
+        <OutputTransferCharacteristicSMPTESymbol>
+            TransferCharacteristic_SMPTEST2084
+         </OutputTransferCharacteristicSMPTESymbol>
+        <Keywords>Test LUT, Scene Referred</Keywords>
+    </Info>
+
+    <LUT1D name="Linear LUT 1D" interpolation="linear" inBitDepth="32f" outBitDepth="32f" id="urn:uuid:781115c9-7c6c-4fed-8950-84bf2bdfdcb5">
+       <Description>1d-LUT with extended range values</Description>
+       <Array dim=" 5 1">
+           0.000000
+           0.250000
+           0.500000
+           0.750000
+           1.000000
+       </Array>
+    </LUT1D>
+
+    <Matrix name="identity" inBitDepth="32f" outBitDepth="32f" id="urn:uuid:781115c9-7c6c-4fed-8950-84bf2bdfdcb6">
+       <Description>Identity Matrix 3x3</Description>
+       <Array dim="3 3">
+           1.000000 0.000000 0.000000
+           0.000000 1.000000 0.000000
+           0.000000 0.000000 1.000000
+       </Array>
+    </Matrix>
+
+    <LUT1D name="Linear LUT 1D" interpolation="linear" inBitDepth="32f" outBitDepth="32f" id="urn:uuid:781115c9-7c6c-4fed-8950-84bf2bdfdcb5">
+        <!-- Where/How do we generate the id -->
+       <Description>1d-LUT with extended range values</Description>
+       <Array dim=" 5 1">
+           0.000000
+           0.250000
+           0.500000
+           0.750000
+           1.000000
+       </Array>
+    </LUT1D>
+    
+    <LUT3D name="Linear LUT 3D" interpolation="tetrahedral" inBitDepth="32f" outBitDepth="32f" id="urn:uuid:781115c9-7c6c-4fed-8950-84bf2bdfdcb4">  
+        <Description>3d-LUT with extended range values</Description>  
+        <Array dim="65 65 65 3">
+            0.000000 0.000000 0.000000
+            0.000000 0.000000 0.015625
+            0.000000 0.000000 0.031250
+            0.000000 0.000000 0.046875
+            <!--...      ...      ...            Multiple rows removed for brevity in example -->
+            1.000000 1.000000 0.953125
+            1.000000 1.000000 0.968750
+            1.000000 1.000000 0.984375
+            1.000000 1.000000 1.000000
+        </Array>
+    </LUT3D>
+    
+    <LUT1D name="Linear LUT 1D" interpolation="linear" inBitDepth="32f" outBitDepth="32f" id="urn:uuid:781115c9-7c6c-4fed-8950-84bf2bdfdcb5">
+       <Description>1d-LUT with extended range values</Description>
+       <Array dim=" 5 1">
+           0.000000
+           0.250000
+           0.500000
+           0.750000
+           1.000000
+       </Array>
+    </LUT1D>
+
+    <Matrix name="identity" inBitDepth="32f" outBitDepth="32f" id="urn:uuid:781115c9-7c6c-4fed-8950-84bf2bdfdcb6">
+       <Description>Identity Matrix 3x3</Description>
+       <Array dim="3 3">
+           1.000000 0.000000 0.000000
+           0.000000 1.000000 0.000000
+           0.000000 0.000000 1.000000
+       </Array>
+    </Matrix>
+
+    <LUT1D name="Linear LUT 1D" interpolation="linear" inBitDepth="32f" outBitDepth="32f" id="urn:uuid:781115c9-7c6c-4fed-8950-84bf2bdfdcb5">
+       <Description>1d-LUT with extended range values</Description>
+       <Array dim=" 5 1">
+           0.000000
+           0.250000
+           0.500000
+           0.750000
+           1.000000
+       </Array>
+    </LUT1D>
+</ProcessList>

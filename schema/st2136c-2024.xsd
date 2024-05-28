@@ -11,20 +11,21 @@
   <xs:import namespace="http://www.w3.org/2000/09/xmldsig#"/>
   <xs:import namespace="http://www.smpte-ra.org/schemas/433/2008/dcmlTypes"/>
 
+
 <xs:redefine schemaLocation="st2136b-2024.xsd">
 <!--  InfoType redefinition  -->
   <xs:complexType name="InfoType">
     <xs:complexContent>
       <xs:extension base="clf:InfoType">
         <xs:sequence>
-          <xs:element name="InputFullRangeVideoH273" type="xs:boolean" minOccurs="1" maxOccurs="1"/>
-          <xs:element name="InputPrimariesH273" type="dcml:UserTextType" minOccurs="1" maxOccurs="1"/>
-          <xs:element name="InputMatrixCoefficientsH273" type="dcml:UserTextType" minOccurs="1" maxOccurs="1"/>
-          <xs:element name="InputTransferFunctionH273" type="dcml:UserTextType" minOccurs="1" maxOccurs="1"/>
-          <xs:element name="OutputFullRangeVideoH273" type="xs:boolean" minOccurs="1" maxOccurs="1"/>
-          <xs:element name="OutputPrimariesH273" type="dcml:UserTextType" minOccurs="1" maxOccurs="1"/>
-          <xs:element name="OutputMatrixCoefficientsH273" type="dcml:UserTextType" minOccurs="1" maxOccurs="1"/>
-          <xs:element name="OutputTransferFunctionH273" type="dcml:UserTextType" minOccurs="1" maxOccurs="1"/>
+          <xs:element name="InputFullRangeVideoBool" type="xs:boolean" minOccurs="1" maxOccurs="1"/>
+          <xs:element name="InputColorPrimariesSMPTESymbol" type="dcml:UserTextType" minOccurs="1" maxOccurs="1"/>
+          <xs:element name="InputCodingEquationsSMPTESymbol" type="dcml:UserTextType" minOccurs="1" maxOccurs="1"/>
+          <xs:element name="InputTransferCharacteristicSMPTESymbol" type="dcml:UserTextType" minOccurs="1" maxOccurs="1"/>
+          <xs:element name="OutputFullRangeVideoBool" type="xs:boolean" minOccurs="1" maxOccurs="1"/>
+          <xs:element name="OutputColorPrimariesSMPTESymbol" type="dcml:UserTextType" minOccurs="1" maxOccurs="1"/>
+          <xs:element name="OutputCodingEquationsSMPTESymbol" type="dcml:UserTextType" minOccurs="1" maxOccurs="1"/>
+          <xs:element name="OutputTransferCharacteristicSMPTESymbol" type="dcml:UserTextType" minOccurs="1" maxOccurs="1"/>
           <xs:element name="Keywords" type="dcml:UserTextType" minOccurs="1" maxOccurs="1"/>
         </xs:sequence>
         <xs:anyAttribute processContents="lax"/>
@@ -42,14 +43,48 @@
           <xs:element ref="clf:InputDescriptor" minOccurs="0" maxOccurs="1"/>
           <xs:element ref="clf:OutputDescriptor" minOccurs="0" maxOccurs="1"/>
           <xs:element ref="clf:Info" minOccurs="0" maxOccurs="1"/>
-          <xs:element name="Range" type="clf:RangeType" minOccurs="0" maxOccurs="1"/>
-          <xs:element name="LUT1D" type="clf:LUT3DType" minOccurs="0" maxOccurs="1"/>
+          <xs:choice minOccurs="0" maxOccurs="1">
+            <xs:group ref="clf:Option1"/>
+            <xs:group ref="clf:Option2"/>
+            <xs:group ref="clf:Option3"/>
+            <xs:group ref="clf:Option4"/>
+          </xs:choice>
           <xs:element name="LUT3D" type="clf:LUT3DType" minOccurs="1" maxOccurs="1"/>
-          <xs:element name="LUT1D" type="clf:LUT3DType" minOccurs="0" maxOccurs="1"/>
-          <xs:element name="Range" type="clf:RangeType" minOccurs="0" maxOccurs="1"/>
+          <xs:choice minOccurs="0" maxOccurs="1">
+            <xs:group ref="clf:Option1"/>
+            <xs:group ref="clf:Option2"/>
+            <xs:group ref="clf:Option3"/>
+            <xs:group ref="clf:Option4"/>
+          </xs:choice>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
 </xs:redefine>
+
+<xs:group name="Option1">
+  <xs:sequence>
+          <xs:element name="LUT1D" type="clf:LUT1DType" minOccurs="1" maxOccurs="1"/>
+          <xs:element name="Matrix" type="clf:MatrixType" minOccurs="1" maxOccurs="1"/>
+          <xs:element name="LUT1D" type="clf:LUT1DType" minOccurs="1" maxOccurs="1"/>
+  </xs:sequence>
+</xs:group>
+<xs:group name="Option2">
+  <xs:sequence>
+          <xs:element name="LUT1D" type="clf:LUT1DType" minOccurs="1" maxOccurs="1"/>
+  </xs:sequence>
+</xs:group>
+<xs:group name="Option3">
+  <xs:sequence>
+          <xs:element name="Matrix" type="clf:MatrixType" minOccurs="1" maxOccurs="1"/>
+          <xs:element name="LUT1D" type="clf:LUT1DType" minOccurs="1" maxOccurs="1"/>
+  </xs:sequence>
+</xs:group>
+<xs:group name="Option4">
+  <xs:sequence>
+          <xs:element name="LUT1D" type="clf:LUT1DType" minOccurs="1" maxOccurs="1"/>
+          <xs:element name="Matrix" type="clf:MatrixType" minOccurs="1" maxOccurs="1"/>
+  </xs:sequence>
+</xs:group>
+
 </xs:schema>
