@@ -42,6 +42,11 @@
     <xs:element name="ACEStransformID" type="clf:URNType" minOccurs="0" maxOccurs="1"/>
     <xs:element name="ACESuserName" type="dcml:UserTextType" minOccurs="0" maxOccurs="1"/>
     <xs:element ref="clf:CalibrationInfo" minOccurs="0" maxOccurs="1"/>
+    <xs:sequence>
+      <xs:element name="InputCharacteristics" type="clf:SignalCharacteristics" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="OutputCharacteristics" type="clf:SignalCharacteristics" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="Keywords" type="dcml:UserTextType" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
     <xs:any namespace="##other" minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
   </xs:sequence>
   <xs:anyAttribute processContents="lax"/>
@@ -360,4 +365,14 @@
     <xs:pattern value="urn:[A-Za-z0-9][A-Za-z0-9-]{0,31}:([A-Za-z0-9()+,\-.:=@;$_!*']|%[0-9A-Fa-f]{2})"/>
   </xs:restriction>
 </xs:simpleType>
+
+<!--  Data Type: SignalCharacteristics  -->
+<xs:complexType name="SignalCharacteristics">
+  <xs:sequence>
+    <xs:element name="FullRangeVideoBool" type="xs:boolean" minOccurs="1" maxOccurs="1"/>
+    <xs:element name="ColorPrimariesSMPTESymbol" type="dcml:UserTextType" minOccurs="1" maxOccurs="1"/>
+    <xs:element name="CodingEquationsSMPTESymbol" type="dcml:UserTextType" minOccurs="1" maxOccurs="1"/>
+    <xs:element name="TransferCharacteristicSMPTESymbol" type="dcml:UserTextType" minOccurs="1" maxOccurs="1"/>
+  </xs:sequence>
+</xs:complexType>
 </xs:schema>

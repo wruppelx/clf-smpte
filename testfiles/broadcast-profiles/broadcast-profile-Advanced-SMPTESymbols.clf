@@ -9,18 +9,18 @@
         <AppRelease>SMPTE_10E_Example</AppRelease>
         <Copyright>SMPTE MMXXIV</Copyright>
         <Revision>1.0</Revision>
-        <InputFullRangeVideoBool>false</InputFullRangeVideoBool>
-        <InputColorPrimariesSMPTESymbol>ColorPrimaries_ITU709</InputColorPrimariesSMPTESymbol>
-        <InputCodingEquationsSMPTESymbol>CodingEquations_ITU709</InputCodingEquationsSMPTESymbol>        
-        <InputTransferCharacteristicSMPTESymbol>
-        	TransferCharacteristic_ITU709	
-        </InputTransferCharacteristicSMPTESymbol>
-        <OutputFullRangeVideoBool>false</OutputFullRangeVideoBool>
-        <OutputColorPrimariesSMPTESymbol>ColorPrimaries_ITU2020</OutputColorPrimariesSMPTESymbol>
-        <OutputCodingEquationsSMPTESymbol>CodingEquations_ITU2100_ICtCp</OutputCodingEquationsSMPTESymbol>
-        <OutputTransferCharacteristicSMPTESymbol>
-            TransferCharacteristic_SMPTEST2084
-         </OutputTransferCharacteristicSMPTESymbol>
+        <InputCharacteristics>
+          <FullRangeVideoBool>false</FullRangeVideoBool>
+          <ColorPrimariesSMPTESymbol>ColorPrimaries_ITU709</ColorPrimariesSMPTESymbol>
+          <CodingEquationsSMPTESymbol>CodingEquations_ITU709</CodingEquationsSMPTESymbol>
+          <TransferCharacteristicSMPTESymbol>TransferCharacteristic_ITU709</TransferCharacteristicSMPTESymbol>
+        </InputCharacteristics>
+        <OutputCharacteristics>
+          <FullRangeVideoBool>false</FullRangeVideoBool>
+          <ColorPrimariesSMPTESymbol>ColorPrimaries_ITU2020</ColorPrimariesSMPTESymbol>
+          <CodingEquationsSMPTESymbol>CodingEquations_ITU2100_ICtCp</CodingEquationsSMPTESymbol>
+          <TransferCharacteristicSMPTESymbol>TransferCharacteristic_ITU709</TransferCharacteristicSMPTESymbol>
+        </OutputCharacteristics>
         <Keywords>Test LUT, Scene Referred</Keywords>
     </Info>
 

@@ -16,20 +16,21 @@
 <!--  InfoType redefinition  -->
   <xs:complexType name="InfoType">
     <xs:complexContent>
-      <xs:extension base="clf:InfoType">
+      <xs:restriction base="clf:InfoType">
         <xs:sequence>
-          <xs:element name="InputFullRangeVideoBool" type="xs:boolean" minOccurs="1" maxOccurs="1"/>
-          <xs:element name="InputColorPrimariesSMPTESymbol" type="dcml:UserTextType" minOccurs="1" maxOccurs="1"/>
-          <xs:element name="InputCodingEquationsSMPTESymbol" type="dcml:UserTextType" minOccurs="1" maxOccurs="1"/>
-          <xs:element name="InputTransferCharacteristicSMPTESymbol" type="dcml:UserTextType" minOccurs="1" maxOccurs="1"/>
-          <xs:element name="OutputFullRangeVideoBool" type="xs:boolean" minOccurs="1" maxOccurs="1"/>
-          <xs:element name="OutputColorPrimariesSMPTESymbol" type="dcml:UserTextType" minOccurs="1" maxOccurs="1"/>
-          <xs:element name="OutputCodingEquationsSMPTESymbol" type="dcml:UserTextType" minOccurs="1" maxOccurs="1"/>
-          <xs:element name="OutputTransferCharacteristicSMPTESymbol" type="dcml:UserTextType" minOccurs="1" maxOccurs="1"/>
+          <xs:element name="AppRelease" type="dcml:UserTextType" minOccurs="0" maxOccurs="1"/>
+          <xs:element name="Copyright" type="dcml:UserTextType" minOccurs="0" maxOccurs="1"/>
+          <xs:element name="Revision" type="dcml:UserTextType" minOccurs="0" maxOccurs="1"/>
+          <xs:element name="ACEStransformID" type="clf:URNType" minOccurs="0" maxOccurs="1"/>
+          <xs:element name="ACESuserName" type="dcml:UserTextType" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="clf:CalibrationInfo" minOccurs="0" maxOccurs="1"/>
+          <xs:element name="InputCharacteristics" type="clf:SignalCharacteristics" minOccurs="1" maxOccurs="1"/>
+          <xs:element name="OutputCharacteristics" type="clf:SignalCharacteristics" minOccurs="1" maxOccurs="1"/>
           <xs:element name="Keywords" type="dcml:UserTextType" minOccurs="1" maxOccurs="1"/>
+          <xs:any namespace="##other" minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
         </xs:sequence>
         <xs:anyAttribute processContents="lax"/>
-      </xs:extension>
+      </xs:restriction>
     </xs:complexContent>
   </xs:complexType>
 
@@ -42,7 +43,7 @@
           <xs:element ref="clf:Description" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="clf:InputDescriptor" minOccurs="0" maxOccurs="1"/>
           <xs:element ref="clf:OutputDescriptor" minOccurs="0" maxOccurs="1"/>
-          <xs:element ref="clf:Info" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="clf:Info" minOccurs="1" maxOccurs="1"/>
           <xs:choice minOccurs="0" maxOccurs="1">
             <xs:group ref="clf:Option1"/>
             <xs:group ref="clf:Option2"/>
