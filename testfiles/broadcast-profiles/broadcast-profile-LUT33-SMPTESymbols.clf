@@ -10,16 +10,16 @@
         <Copyright>SMPTE MMXXIV</Copyright>
         <Revision>1.0</Revision>
         <InputCharacteristics>
-            <FullRangeVideoBool>false</FullRangeVideoBool>
             <ColorPrimariesSMPTESymbol>ColorPrimaries_ITU709</ColorPrimariesSMPTESymbol>
             <CodingEquationsSMPTESymbol>CodingEquations_ITU709</CodingEquationsSMPTESymbol>
             <TransferCharacteristicSMPTESymbol>TransferCharacteristic_ITU709</TransferCharacteristicSMPTESymbol>
+            <FullRangeVideoBool>false</FullRangeVideoBool>
         </InputCharacteristics>
         <OutputCharacteristics>
-            <FullRangeVideoBool>false</FullRangeVideoBool>
             <ColorPrimariesSMPTESymbol>ColorPrimaries_ITU2020</ColorPrimariesSMPTESymbol>
             <CodingEquationsSMPTESymbol>CodingEquations_ITU2100_ICtCp</CodingEquationsSMPTESymbol>
             <TransferCharacteristicSMPTESymbol>TransferCharacteristic_SMPTEST2084</TransferCharacteristicSMPTESymbol>
+            <FullRangeVideoBool>false</FullRangeVideoBool>
         </OutputCharacteristics>
         <Keywords>Test LUT, Scene Referred</Keywords>
     </Info>

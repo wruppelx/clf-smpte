@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--  Schema for the Live_Broadcast_LUT33_10-bit CLF profile  -->
+<!--  Schema for the Live_Broadcast_Advanced_10-bit CLF profile  -->
 <!--  Type redefinitions for ST 2136 brodcast profiles  -->
 <xs:schema targetNamespace="http://www.smpte-ra.org/ns/2136/2023"
   xmlns="http://www.smpte-ra.org/ns/2136/2023"
@@ -43,8 +43,8 @@
           <xs:element name="Profile" minOccurs="1" maxOccurs="1">
             <xs:simpleType>
               <xs:restriction base="xs:string">
-<!--  Identifies the Live_Broadcast_LUT33_10-bit profile  -->
-                <xs:enumeration value="http://www.smpte-ra.org/ns/2136/2023#Live_Broadcast_LUT33_10-bit"/>
+<!--  Identifies the Live_Broadcast_Advanced_10-bit profile  -->
+                <xs:enumeration value="http://www.smpte-ra.org/ns/2136/2023#Live_Broadcast_Advanced_10-bit"/>
               </xs:restriction>
             </xs:simpleType>
           </xs:element>
@@ -54,10 +54,16 @@
           <xs:element ref="clf:Info" minOccurs="1" maxOccurs="1"/>
           <xs:choice minOccurs="0" maxOccurs="1">
             <xs:group ref="clf:Option1"/>
-          </xs:choice>
+            <xs:group ref="clf:Option2"/>
+            <xs:group ref="clf:Option3"/>
+            <xs:group ref="clf:Option4"/>
+	          </xs:choice>
           <xs:element name="LUT3D" type="clf:LUT3DType" minOccurs="1" maxOccurs="1"/>
           <xs:choice minOccurs="0" maxOccurs="1">
             <xs:group ref="clf:Option1"/>
+            <xs:group ref="clf:Option2"/>
+            <xs:group ref="clf:Option3"/>
+            <xs:group ref="clf:Option4"/>
           </xs:choice>
         </xs:sequence>
       </xs:extension>
@@ -68,6 +74,25 @@
 <xs:group name="Option1">
   <xs:sequence>
           <xs:element name="LUT1D" type="clf:LUT1DType" minOccurs="1" maxOccurs="1"/>
+          <xs:element name="Matrix" type="clf:MatrixType" minOccurs="1" maxOccurs="1"/>
+          <xs:element name="LUT1D" type="clf:LUT1DType" minOccurs="1" maxOccurs="1"/>
+  </xs:sequence>
+</xs:group>
+<xs:group name="Option2">
+  <xs:sequence>
+          <xs:element name="LUT1D" type="clf:LUT1DType" minOccurs="1" maxOccurs="1"/>
+  </xs:sequence>
+</xs:group>
+<xs:group name="Option3">
+  <xs:sequence>
+          <xs:element name="Matrix" type="clf:MatrixType" minOccurs="1" maxOccurs="1"/>
+          <xs:element name="LUT1D" type="clf:LUT1DType" minOccurs="1" maxOccurs="1"/>
+  </xs:sequence>
+</xs:group>
+<xs:group name="Option4">
+  <xs:sequence>
+          <xs:element name="LUT1D" type="clf:LUT1DType" minOccurs="1" maxOccurs="1"/>
+          <xs:element name="Matrix" type="clf:MatrixType" minOccurs="1" maxOccurs="1"/>
   </xs:sequence>
 </xs:group>
 

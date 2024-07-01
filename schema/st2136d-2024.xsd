@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--  Schema for the Live_Broadcast_LUT33_10-bit CLF profile  -->
+<!--  Schema for the Live_Broadcast_LUT65_10-bit CLF profile  -->
 <!--  Type redefinitions for ST 2136 brodcast profiles  -->
 <xs:schema targetNamespace="http://www.smpte-ra.org/ns/2136/2023"
   xmlns="http://www.smpte-ra.org/ns/2136/2023"
@@ -43,8 +43,8 @@
           <xs:element name="Profile" minOccurs="1" maxOccurs="1">
             <xs:simpleType>
               <xs:restriction base="xs:string">
-<!--  Identifies the Live_Broadcast_LUT33_10-bit profile  -->
-                <xs:enumeration value="http://www.smpte-ra.org/ns/2136/2023#Live_Broadcast_LUT33_10-bit"/>
+<!--  Identifies the Live_Broadcast_LUT65_10-bit profile  -->
+                <xs:enumeration value="http://www.smpte-ra.org/ns/2136/2023#Live_Broadcast_LUT65_10-bit"/>
               </xs:restriction>
             </xs:simpleType>
           </xs:element>

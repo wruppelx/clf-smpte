@@ -369,10 +369,10 @@
 <!--  Data Type: SignalCharacteristics  -->
 <xs:complexType name="SignalCharacteristics">
   <xs:sequence>
-    <xs:element name="FullRangeVideoBool" type="xs:boolean" minOccurs="1" maxOccurs="1"/>
     <xs:element name="ColorPrimariesSMPTESymbol" type="dcml:UserTextType" minOccurs="1" maxOccurs="1"/>
     <xs:element name="CodingEquationsSMPTESymbol" type="dcml:UserTextType" minOccurs="1" maxOccurs="1"/>
     <xs:element name="TransferCharacteristicSMPTESymbol" type="dcml:UserTextType" minOccurs="1" maxOccurs="1"/>
+    <xs:element name="FullRangeVideoBool" type="xs:boolean" minOccurs="1" maxOccurs="1"/>
   </xs:sequence>
 </xs:complexType>
 </xs:schema>
