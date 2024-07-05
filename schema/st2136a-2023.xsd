@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema targetNamespace="http://www.smpte-ra.org/ns/2136/2023"
-  xmlns:dcml="http://www.smpte-ra.org/schemas/433/2008/dcmlTypes"
+  xmlns:dcml="http://www.smpte-ra.org/schemas/433/2008/dcmlTypes/"
   xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
   xmlns:xs="http://www.w3.org/2001/XMLSchema"
   xmlns:clf="http://www.smpte-ra.org/ns/2136/2023"
   xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning"
   vc:minVersion="1.0" elementFormDefault="qualified" attributeFormDefault="unqualified">
   <xs:import namespace="http://www.w3.org/2000/09/xmldsig#"/>
-  <xs:import namespace="http://www.smpte-ra.org/schemas/433/2008/dcmlTypes"/>
+  <xs:import namespace="http://www.smpte-ra.org/schemas/433/2008/dcmlTypes/"/>
 
 <!--  Process List definition  -->
 <xs:element name="ProcessList" type="clf:ProcessListType"/>
@@ -369,10 +369,21 @@
 <!--  Data Type: SignalCharacteristics  -->
 <xs:complexType name="SignalCharacteristics">
   <xs:sequence>
-    <xs:element name="ColorPrimariesSMPTESymbol" type="dcml:UserTextType" minOccurs="1" maxOccurs="1"/>
-    <xs:element name="CodingEquationsSMPTESymbol" type="dcml:UserTextType" minOccurs="1" maxOccurs="1"/>
-    <xs:element name="TransferCharacteristicSMPTESymbol" type="dcml:UserTextType" minOccurs="1" maxOccurs="1"/>
+    <xs:element name="ColorPrimaries" type="clf:LabelsRegisterSymbol" minOccurs="1" maxOccurs="1"/>
+    <xs:element name="CodingEquations" type="clf:LabelsRegisterSymbol" minOccurs="1" maxOccurs="1"/>
+    <xs:element name="TransferCharacteristic" type="clf:LabelsRegisterSymbol" minOccurs="1" maxOccurs="1"/>
     <xs:element name="FullRangeVideoBool" type="xs:boolean" minOccurs="1" maxOccurs="1"/>
   </xs:sequence>
 </xs:complexType>
+
+<!--  Data Type: LabelsRegisterSymbol  -->
+<xs:complexType name="LabelsRegisterSymbol">
+  <xs:simpleContent>
+    <xs:extension base="xs:string">
+      <xs:attribute name="scope" type="xs:anyURI" use="optional"
+        default="http://www.smpte-ra.org/schemas/400/2012"/>
+    </xs:extension>
+  </xs:simpleContent>
+</xs:complexType>
+
 </xs:schema>
