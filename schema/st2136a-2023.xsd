@@ -196,7 +196,6 @@
   <xs:attribute name="linSideOffset" type="xs:float" use="optional" default="0.0"/>
   <xs:attribute name="linSideBreak" type="xs:float" use="optional" default="0.0"/>
   <xs:attribute name="linearSlope" type="xs:float" use="optional"/>
-  <xs:attribute name="linearOffset" type="xs:float" use="optional"/>
   <xs:attribute name="channel" type="clf:channelType" use="optional"/>
 </xs:complexType>
 
