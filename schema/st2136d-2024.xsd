@@ -24,9 +24,8 @@
           <xs:element name="Revision" type="dcml:UserTextType" minOccurs="0" maxOccurs="1"/>
           <xs:element name="ACEStransformID" type="clf:URNType" minOccurs="0" maxOccurs="1"/>
           <xs:element name="ACESuserName" type="dcml:UserTextType" minOccurs="0" maxOccurs="1"/>
-          <xs:element ref="clf:CalibrationInfo" minOccurs="0" maxOccurs="1"/>
-          <xs:element name="InputCharacteristics" type="clf:SignalCharacteristics" minOccurs="1" maxOccurs="1"/>
-          <xs:element name="OutputCharacteristics" type="clf:SignalCharacteristics" minOccurs="1" maxOccurs="1"/>
+          <xs:element name="InputCharacteristics" type="clf:SignalCharacteristicsType" minOccurs="1" maxOccurs="1"/>
+          <xs:element name="OutputCharacteristics" type="clf:SignalCharacteristicsType" minOccurs="1" maxOccurs="1"/>
           <xs:element name="Keywords" type="dcml:UserTextType" minOccurs="1" maxOccurs="1"/>
           <xs:any namespace="##other" minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
         </xs:sequence>
@@ -59,6 +58,8 @@
           <xs:choice minOccurs="0" maxOccurs="1">
             <xs:group ref="clf:Option1"/>
           </xs:choice>
+          <xs:element name="Signer" type="ds:KeyInfoType" minOccurs="0" />
+          <xs:element ref="ds:Signature" minOccurs="0" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>

@@ -1,38 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema targetNamespace="http://www.smpte-ra.org/ns/2136/2023"
-  xmlns:dcml="http://www.smpte-ra.org/schemas/433/2008/dcmlTypes/"
+  xmlns:dcml="http://www.smpte-ra.org/schemas/433/2008/dcmlTypes"
   xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
   xmlns:xs="http://www.w3.org/2001/XMLSchema"
   xmlns:clf="http://www.smpte-ra.org/ns/2136/2023"
   xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning"
-  vc:minVersion="1.0" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  vc:minVersion="1.1" elementFormDefault="qualified" attributeFormDefault="unqualified">
   <xs:import namespace="http://www.w3.org/2000/09/xmldsig#"/>
-  <xs:import namespace="http://www.smpte-ra.org/schemas/433/2008/dcmlTypes/"/>
+  <xs:import namespace="http://www.smpte-ra.org/schemas/433/2008/dcmlTypes"/>
 
 <!--  Process List definition  -->
 <xs:element name="ProcessList" type="clf:ProcessListType"/>
 <xs:complexType name="ProcessListType">
   <xs:sequence>
-    <xs:element ref="clf:Profile" minOccurs="0" maxOccurs="1"/>
-    <xs:element ref="clf:Description" minOccurs="0" maxOccurs="unbounded"/>
-    <xs:element ref="clf:InputDescriptor" minOccurs="0" maxOccurs="1"/>
-    <xs:element ref="clf:OutputDescriptor" minOccurs="0" maxOccurs="1"/>
+    <xs:element name="Profile" type="dcml:UserTextType" minOccurs="0" maxOccurs="1"/>
+    <xs:element name="Description" type="dcml:UserTextType" minOccurs="0" maxOccurs="unbounded"/>
+    <xs:element name="InputDescriptor" type="dcml:UserTextType" minOccurs="0" maxOccurs="1"/>
+    <xs:element name="OutputDescriptor" type="dcml:UserTextType" minOccurs="0" maxOccurs="1"/>
     <xs:element ref="clf:Info" minOccurs="0" maxOccurs="1"/>
     <xs:element ref="clf:ProcessNode" minOccurs="1" maxOccurs="unbounded"/>
-    <xs:element name="Signer" type="ds:KeyInfoType" minOccurs="0" />
-    <xs:element ref="ds:Signature" minOccurs="0" />
   </xs:sequence>
   <xs:attribute name="id" type="dcml:UUIDType" use="required"/>
   <xs:attribute name="compCLFversion" type="xs:string" use="optional"/><!-- deprecated, CLF version is signalled by the schama URI -->
   <xs:attribute name="name" type="xs:string" use="optional"/>
   <xs:attribute name="inverseOf" type="dcml:UUIDType" use="optional"/>
 </xs:complexType>
-
-<!-- Elements used in ProcessList -->
-<xs:element name="Profile" type="dcml:UserTextType"/>
-<xs:element name="Description" type="dcml:UserTextType"/>
-<xs:element name="InputDescriptor" type="dcml:UserTextType"/>
-<xs:element name="OutputDescriptor" type="dcml:UserTextType"/>
 
 <!--  Info element definition  -->
 <xs:element name="Info" type="clf:InfoType"/>
@@ -43,12 +35,24 @@
     <xs:element name="Revision" type="dcml:UserTextType" minOccurs="0" maxOccurs="1"/>
     <xs:element name="ACEStransformID" type="clf:URNType" minOccurs="0" maxOccurs="1"/>
     <xs:element name="ACESuserName" type="dcml:UserTextType" minOccurs="0" maxOccurs="1"/>
-    <xs:element name="InputCharacteristics" type="clf:SignalCharacteristicsType" minOccurs="0" maxOccurs="1"/>
-    <xs:element name="OutputCharacteristics" type="clf:SignalCharacteristicsType" minOccurs="0" maxOccurs="1"/>
-    <xs:element name="Keywords" type="dcml:UserTextType" minOccurs="0" maxOccurs="1"/>
-    <xs:any namespace="##other" minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
+    <xs:element ref="clf:CalibrationInfo" minOccurs="0" maxOccurs="1"/>
+    <xs:any minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
   </xs:sequence>
   <xs:anyAttribute processContents="lax"/>
+</xs:complexType>
+
+<!--  CalibrationInfo element definition  -->
+<xs:element name="CalibrationInfo" type="clf:CalibrationInfoType"/>
+<xs:complexType name="CalibrationInfoType">
+  <xs:sequence>
+    <xs:element name="DisplayDeviceSerialNum" type="dcml:UserTextType" minOccurs="0" maxOccurs="1"/>
+    <xs:element name="DisplayDeviceHostName" type="dcml:UserTextType" minOccurs="0" maxOccurs="1"/>
+    <xs:element name="OperatorName" type="dcml:UserTextType" minOccurs="0" maxOccurs="1"/>
+    <xs:element name="CalibrationDateTime" type="dcml:UserTextType" minOccurs="0" maxOccurs="1"/>
+    <xs:element name="MeasurementProbe" type="dcml:UserTextType" minOccurs="0" maxOccurs="1"/>
+    <xs:element name="CalibrationSoftwareName" type="dcml:UserTextType" minOccurs="0" maxOccurs="1"/>
+    <xs:element name="CalibrationSoftwareVersion" type="dcml:UserTextType" minOccurs="0" maxOccurs="1"/>
+  </xs:sequence>
 </xs:complexType>
 
 <!--  ProcessNode definition  -->
@@ -74,6 +78,13 @@
       <xs:attribute name="interpolation" use="optional" fixed="linear" type="xs:string"/>
       <xs:attribute name="rawHalfs" type="xs:string" use="optional" fixed="true"/>
       <xs:attribute name="halfDomain" type="xs:string" use="optional" fixed="true"/>
+      <!-- If halfDomain=true then the Array shall be of dim="65536 1" and shall contain 65536 entries-->
+      <xs:assert test="
+      if (@halfDomain eq 'true')
+      then (./clf:Array/@dim = '65536 1')
+        and (count(tokenize(xs:token(./clf:Array),' ')) eq 65536)
+      else true()
+      "/>
     </xs:extension>
   </xs:complexContent>
 </xs:complexType>
@@ -181,6 +192,7 @@
   <xs:attribute name="linSideOffset" type="xs:float" use="optional" default="0.0"/>
   <xs:attribute name="linSideBreak" type="xs:float" use="optional" default="0.0"/>
   <xs:attribute name="linearSlope" type="xs:float" use="optional"/>
+  <xs:attribute name="linearOffset" type="xs:float" use="optional"/>
   <xs:attribute name="channel" type="clf:channelType" use="optional"/>
 </xs:complexType>
 
@@ -208,6 +220,37 @@
           </xs:restriction>
         </xs:simpleType>
       </xs:attribute>
+      <xs:assert test="
+      if (count(./clf:ExponentParams) eq 1) then (
+        ((substring(@style, 1, 5) = 'basic') and not(exists(./clf:ExponentParams/@offset))) or
+        ((substring(@style, 1, 8) = 'monCurve')
+        and exists(./clf:ExponentParams/@offset)
+        and (./clf:ExponentParams/@exponent &gt;= 1.0)
+        and (./clf:ExponentParams/@exponent &lt;= 10.0))
+      )
+      else if (count(./clf:ExponentParams) eq 3) then (
+        (
+          ((substring(@style, 1, 5) = 'basic') and not(exists(./clf:ExponentParams[*]/@offset))) or
+          ((substring(@style, 1, 8) = 'monCurve')
+          and exists(./clf:ExponentParams[1]/@offset)
+          and exists(./clf:ExponentParams[2]/@offset)
+          and exists(./clf:ExponentParams[3]/@offset)
+          and (./clf:ExponentParams[1]/@exponent &gt;= 1.0)
+          and (./clf:ExponentParams[1]/@exponent &lt;= 10.0)
+          and (./clf:ExponentParams[2]/@exponent &gt;= 1.0)
+          and (./clf:ExponentParams[2]/@exponent &lt;= 10.0)
+          and (./clf:ExponentParams[3]/@exponent &gt;= 1.0)
+          and (./clf:ExponentParams[3]/@exponent &lt;= 10.0)
+          )
+        ) and exists(./clf:ExponentParams[1]/@channel) 
+          and exists(./clf:ExponentParams[2]/@channel) 
+          and exists(./clf:ExponentParams[3]/@channel)
+          and (./clf:ExponentParams[1]/@channel != ./clf:ExponentParams[2]/@channel)
+          and (./clf:ExponentParams[1]/@channel != ./clf:ExponentParams[3]/@channel)
+          and (./clf:ExponentParams[2]/@channel != ./clf:ExponentParams[3]/@channel)
+      )
+      else false()
+      "/>
     </xs:extension>
   </xs:complexContent>
 </xs:complexType>
@@ -264,6 +307,18 @@
   <xs:simpleContent>
     <xs:extension base="clf:floatListType">
       <xs:attribute name="dim" type="clf:dimType" use="required"/>
+      <!-- Test for number of elements in LUT1D and LUT3D -->
+      <xs:assert test="
+      (
+      count($value) = number(substring-before(@dim, ' ')) * 
+              number(substring-before(substring-after(@dim, ' '), ' ')) * 
+              number(substring-before(substring-after(substring-after(@dim, ' '), ' '), ' ')) *
+              number(substring-after(substring-after(substring-after(@dim, ' '), ' '), ' '))
+      ) or (
+      count($value) = number(substring-before(@dim, ' ')) * 
+              number(substring-after(@dim, ' '))
+      )
+      "/>
     </xs:extension>
   </xs:simpleContent>
 </xs:complexType>
@@ -280,6 +335,11 @@
           </xs:restriction>
         </xs:simpleType>
       </xs:attribute>
+      <!-- Test for number of elements in matrices -->
+      <xs:assert test="
+      ((@dim = '3 3') and (count($value) = 9)) or
+      ((@dim = '3 4') and (count($value) = 12))
+      "/>
     </xs:extension>
   </xs:simpleContent>
 </xs:complexType>
@@ -349,25 +409,4 @@
     <xs:pattern value="urn:[A-Za-z0-9][A-Za-z0-9-]{0,31}:([A-Za-z0-9()+,\-.:=@;$_!*']|%[0-9A-Fa-f]{2})"/>
   </xs:restriction>
 </xs:simpleType>
-
-<!--  Data Type: SignalCharacteristics  -->
-<xs:complexType name="SignalCharacteristicsType">
-  <xs:sequence>
-    <xs:element name="ColorPrimaries" type="clf:LabelsRegisterSymbolType" minOccurs="1" maxOccurs="1"/>
-    <xs:element name="TransferCharacteristic" type="clf:LabelsRegisterSymbolType" minOccurs="1" maxOccurs="1"/>
-    <xs:element name="CodingEquations" type="clf:LabelsRegisterSymbolType" minOccurs="1" maxOccurs="1"/>
-    <xs:element name="FullRangeVideoBool" type="xs:boolean" minOccurs="1" maxOccurs="1"/>
-  </xs:sequence>
-</xs:complexType>
-
-<!--  Data Type: LabelsRegisterSymbol  -->
-<xs:complexType name="LabelsRegisterSymbolType">
-  <xs:simpleContent>
-    <xs:extension base="xs:string">
-      <xs:attribute name="scope" type="xs:anyURI" use="optional"
-        default="http://www.smpte-ra.org/schemas/400/2012"/>
-    </xs:extension>
-  </xs:simpleContent>
-</xs:complexType>
-
 </xs:schema>

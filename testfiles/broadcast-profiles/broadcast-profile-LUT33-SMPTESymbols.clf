@@ -11,14 +11,14 @@
         <Revision>1.0</Revision>
         <InputCharacteristics>
             <ColorPrimaries>ColorPrimaries_ITU709</ColorPrimaries>
-            <CodingEquations>CodingEquations_ITU709</CodingEquations>
             <TransferCharacteristic>TransferCharacteristic_ITU709</TransferCharacteristic>
+            <CodingEquations>CodingEquations_ITU709</CodingEquations>
             <FullRangeVideoBool>false</FullRangeVideoBool>
         </InputCharacteristics>
         <OutputCharacteristics>
             <ColorPrimaries>ColorPrimaries_ITU2020</ColorPrimaries>
-            <CodingEquations>CodingEquations_ITU2100_ICtCp</CodingEquations>
             <TransferCharacteristic>TransferCharacteristic_SMPTEST2084</TransferCharacteristic>
+            <CodingEquations>CodingEquations_ITU2100_ICtCp</CodingEquations>
             <FullRangeVideoBool>false</FullRangeVideoBool>
         </OutputCharacteristics>
         <Keywords>Test LUT, Scene Referred</Keywords>
