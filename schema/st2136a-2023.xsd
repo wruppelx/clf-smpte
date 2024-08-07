@@ -356,7 +356,7 @@
     <xs:element name="ColorPrimaries" type="clf:LabelsRegisterSymbolType" minOccurs="1" maxOccurs="1"/>
     <xs:element name="TransferCharacteristic" type="clf:LabelsRegisterSymbolType" minOccurs="1" maxOccurs="1"/>
     <xs:element name="CodingEquations" type="clf:LabelsRegisterSymbolType" minOccurs="1" maxOccurs="1"/>
-    <xs:element name="FullRangeVideoBool" type="xs:boolean" minOccurs="1" maxOccurs="1"/>
+    <xs:element name="VideoFullRangeFlag" type="xs:boolean" minOccurs="1" maxOccurs="1"/>
   </xs:sequence>
 </xs:complexType>
 
