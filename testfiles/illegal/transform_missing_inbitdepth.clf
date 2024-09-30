@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ProcessList xmlns="http://www.smpte-ra.org/ns/2136/2023" id="urn:uuid:9113206b-6cca-4687-8126-2726d4bbaa3e">
+<ProcessList xmlns="http://www.smpte-ra.org/ns/2136-1/2024" id="urn:uuid:9113206b-6cca-4687-8126-2726d4bbaa3e">
     <Description>The inBitDepth is missing</Description>
     <LUT1D  outBitDepth="8i" id="urn:uuid:22490fe3-5179-496a-93b1-263e196073d7">
         <Array dim="2 1">

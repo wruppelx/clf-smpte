@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ProcessList xmlns="http://www.smpte-ra.org/ns/2136/2023" name="transform example lut3d" id="urn:uuid:5b9454df-d47c-41a3-96f1-2d729b500661">
+<ProcessList xmlns="http://www.smpte-ra.org/ns/2136-1/2024" name="transform example lut3d" id="urn:uuid:5b9454df-d47c-41a3-96f1-2d729b500661">
 <Description> 3D LUT example </Description>
 <LUT3D name="identity" interpolation="tetrahedral" inBitDepth="12i" outBitDepth="16f" id="urn:uuid:843693d9-0eb4-4b07-86a4-649d9b990cb9">
 <Description> 3D LUT </Description>

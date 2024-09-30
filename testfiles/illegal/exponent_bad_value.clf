@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ProcessList xmlns="http://www.smpte-ra.org/ns/2136/2023" id="urn:uuid:5b731136-8e6f-4e61-9841-d408a84dbfda">
+<ProcessList xmlns="http://www.smpte-ra.org/ns/2136-1/2024" id="urn:uuid:5b731136-8e6f-4e61-9841-d408a84dbfda">
     <Description>The moncurve style requires an exponent >= 1.</Description>
     <Exponent inBitDepth="16f" outBitDepth="8i" style="monCurveFwd" id="urn:uuid:8526d784-5d6d-4570-a4aa-b01a2082ef11">
         <ExponentParams exponent="0.99" offset="0.0" />

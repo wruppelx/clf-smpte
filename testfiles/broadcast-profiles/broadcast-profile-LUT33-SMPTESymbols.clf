@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ProcessList name="SMPTE Example Live Broadcast LUT33 10-bit Profile" xmlns="http://www.smpte-ra.org/ns/2136/2023" id="urn:uuid:76f24206-2acf-4b66-8182-62dd74cbfa34">
+<ProcessList name="SMPTE Example Live Broadcast LUT33 10-bit Profile" xmlns="http://www.smpte-ra.org/ns/2136-1/2024" id="urn:uuid:76f24206-2acf-4b66-8182-62dd74cbfa34">
 
-    <Profile>http://www.smpte-ra.org/ns/2136/2023#Live_Broadcast_LUT33_10-bit</Profile>
+    <Profile>http://www.smpte-ra.org/ns/2136-10/2024#Live_Broadcast_LUT33_10-bit</Profile>
 
     <Description>Demo 33 cubed LUT with dummy values</Description>
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ProcessList name="matrix example" xmlns="http://www.smpte-ra.org/ns/2136/2023" id="urn:uuid:847e0614-5de1-4fe1-8065-c3dff92810dc">
+<ProcessList name="matrix example" xmlns="http://www.smpte-ra.org/ns/2136-1/2024" id="urn:uuid:847e0614-5de1-4fe1-8065-c3dff92810dc">
     <Description>Basic matrix example using CLF v2 dim syntax</Description>
     <InputDescriptor>RGB</InputDescriptor>
     <OutputDescriptor>XYZ</OutputDescriptor>

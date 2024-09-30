@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema targetNamespace="http://www.smpte-ra.org/ns/2136/2023"
-  xmlns="http://www.smpte-ra.org/ns/2136/2023"
-  xmlns:clf="http://www.smpte-ra.org/ns/2136/2023"
+<xs:schema targetNamespace="http://www.smpte-ra.org/ns/2136-1/2024"
+  xmlns="http://www.smpte-ra.org/ns/2136-10/2024"
+  xmlns:clf="http://www.smpte-ra.org/ns/2136-1/2024"
   xmlns:xs="http://www.w3.org/2001/XMLSchema"
   xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning"
   vc:minVersion="1.0" elementFormDefault="qualified" attributeFormDefault="unqualified">
 
 <!--  Intermediate ProcessListType redefinition, do not use for instance validation  -->
-<xs:redefine schemaLocation="st2136a-2023.xsd">
+<xs:redefine schemaLocation="st2136-1a-2024.xsd">
   <xs:complexType name="ProcessListType">
     <xs:complexContent>
       <xs:restriction base="clf:ProcessListType">

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--  Schema for the Live_Broadcast_LUT65_10-bit CLF profile  -->
 <!--  Type redefinitions for ST 2136 brodcast profiles  -->
-<xs:schema targetNamespace="http://www.smpte-ra.org/ns/2136/2023"
-  xmlns="http://www.smpte-ra.org/ns/2136/2023"
-  xmlns:clf="http://www.smpte-ra.org/ns/2136/2023"
+<xs:schema targetNamespace="http://www.smpte-ra.org/ns/2136-1/2024"
+  xmlns="http://www.smpte-ra.org/ns/2136-10/2024"
+  xmlns:clf="http://www.smpte-ra.org/ns/2136-1/2024"
   xmlns:dcml="http://www.smpte-ra.org/schemas/433/2008/dcmlTypes/"
   xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
   xmlns:xs="http://www.w3.org/2001/XMLSchema"
@@ -13,7 +13,7 @@
   <xs:import namespace="http://www.smpte-ra.org/schemas/433/2008/dcmlTypes/"/>
 
 
-<xs:redefine schemaLocation="st2136b-2024.xsd">
+<xs:redefine schemaLocation="st2136-10a-2024.xsd">
 <!--  InfoType redefinition  -->
   <xs:complexType name="InfoType">
     <xs:complexContent>
@@ -43,7 +43,7 @@
             <xs:simpleType>
               <xs:restriction base="xs:string">
 <!--  Identifies the Live_Broadcast_LUT65_10-bit profile  -->
-                <xs:enumeration value="http://www.smpte-ra.org/ns/2136/2023#Live_Broadcast_LUT65_10-bit"/>
+                <xs:enumeration value="http://www.smpte-ra.org/ns/2136-10/2024#Live_Broadcast_LUT65_10-bit"/>
               </xs:restriction>
             </xs:simpleType>
           </xs:element>
