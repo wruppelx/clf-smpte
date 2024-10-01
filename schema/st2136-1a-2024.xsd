@@ -156,7 +156,7 @@
 </xs:complexType>
 
 <!-- Elements used in ProcessList -->
-<xs:element name="Profile" type="dcml:UserTextType"/>
+<xs:element name="Profile" type="xs:string"/>
 <xs:element name="Description" type="dcml:UserTextType"/>
 <xs:element name="InputDescriptor" type="dcml:UserTextType"/>
 <xs:element name="OutputDescriptor" type="dcml:UserTextType"/>
