@@ -19,6 +19,8 @@
     <xs:complexContent>
       <xs:restriction base="clf:InfoType">
         <xs:sequence>
+<!--  Identifies the Live_Broadcast_Advanced_10-bit profile  -->
+          <xs:element name="Profile" type="xs:string" fixed="http://www.smpte-ra.org/ns/2136-10/2024#Live_Broadcast_Advanced_10-bit"/>
           <xs:element name="AppRelease" type="dcml:UserTextType" minOccurs="0" maxOccurs="1"/>
           <xs:element name="Copyright" type="dcml:UserTextType" minOccurs="0" maxOccurs="1"/>
           <xs:element name="Revision" type="dcml:UserTextType" minOccurs="0" maxOccurs="1"/>
@@ -39,14 +41,6 @@
     <xs:complexContent>
       <xs:extension base="clf:ProcessListType">
         <xs:sequence>
-          <xs:element name="Profile" minOccurs="1" maxOccurs="1">
-            <xs:simpleType>
-              <xs:restriction base="xs:string">
-<!--  Identifies the Live_Broadcast_Advanced_10-bit profile  -->
-                <xs:enumeration value="http://www.smpte-ra.org/ns/2136-10/2024#Live_Broadcast_Advanced_10-bit"/>
-              </xs:restriction>
-            </xs:simpleType>
-          </xs:element>
           <xs:element ref="clf:Description" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="clf:InputDescriptor" minOccurs="0" maxOccurs="1"/>
           <xs:element ref="clf:OutputDescriptor" minOccurs="0" maxOccurs="1"/>

@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ProcessList name="SMPTE Example Live Broadcast LUT65 10-bit Profile" xmlns="http://www.smpte-ra.org/ns/2136-1/2024" id="urn:uuid:8ee6b986-1083-49a7-93d2-ae4b94bb0e1d">
 
-    <Profile>http://www.smpte-ra.org/ns/2136-10/2024#Live_Broadcast_LUT65_10-bit</Profile>
-
     <Description>Demo 65 cubed LUT with dummy values</Description>
 
     <Info>
+        <Profile>http://www.smpte-ra.org/ns/2136-10/2024#Live_Broadcast_LUT65_10-bit</Profile>
         <AppRelease>SMPTE_10E_Example</AppRelease>
         <Copyright>SMPTE MMXXIV</Copyright>
         <Revision>1.0</Revision>

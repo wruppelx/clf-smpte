@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ProcessList name="SMPTE Example Live Broadcast Advanced 10-bit Profile" xmlns="http://www.smpte-ra.org/ns/2136-1/2024" id="urn:uuid:7df53f68-aa62-4679-ae0f-b00fa001f8ca">
 
-    <Profile>http://www.smpte-ra.org/ns/2136-10/2024#Live_Broadcast_Advanced_10-bit</Profile>
-
     <Description>Demo Advanced Broadcast CLF with dummy values</Description>
 
     <Info>
+        <Profile>http://www.smpte-ra.org/ns/2136-10/2024#Live_Broadcast_Advanced_10-bit</Profile>
         <AppRelease>SMPTE_10E_Example</AppRelease>
         <Copyright>SMPTE MMXXIV</Copyright>
         <Revision>1.0</Revision>

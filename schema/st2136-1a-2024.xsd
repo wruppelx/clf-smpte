@@ -140,7 +140,6 @@
 <xs:element name="ProcessList" type="clf:ProcessListType"/>
 <xs:complexType name="ProcessListType">
   <xs:sequence>
-    <xs:element ref="clf:Profile" minOccurs="0"/>
     <xs:element ref="clf:Description" minOccurs="0" maxOccurs="unbounded"/>
     <xs:element ref="clf:InputDescriptor" minOccurs="0"/>
     <xs:element ref="clf:OutputDescriptor" minOccurs="0"/>
@@ -165,6 +164,7 @@
 <xs:element name="Info" type="clf:InfoType"/>
 <xs:complexType name="InfoType">
   <xs:sequence>
+    <xs:element ref="clf:Profile" minOccurs="0"/>
     <xs:element name="AppRelease" type="dcml:UserTextType" minOccurs="0"/>
     <xs:element name="Copyright" type="dcml:UserTextType" minOccurs="0"/>
     <xs:element name="Revision" type="dcml:UserTextType" minOccurs="0"/>
