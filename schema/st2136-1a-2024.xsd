@@ -75,6 +75,13 @@
     <xs:pattern value="urn:[A-Za-z0-9][A-Za-z0-9-]{0,31}:([A-Za-z0-9()+,\-.:=@;$_!*']|%[0-9A-Fa-f]{2})"/>
   </xs:restriction>
 </xs:simpleType>
+
+<!--  Data Type: VideoSignalRangeType  -->
+<!--  Restrictions can be defined for CLF Profiles -->
+<xs:simpleType name="VideoSignalRangeType">
+  <xs:restriction base="xs:string"/>
+</xs:simpleType>
+
 <!--  SIMPLE DATA TYPES END -->
 
 <!--  COMPLEX DATA TYPES  -->
@@ -109,7 +116,7 @@
     <xs:element name="ColorPrimaries" type="clf:LabelsRegisterSymbolType"/>
     <xs:element name="TransferCharacteristic" type="clf:LabelsRegisterSymbolType"/>
     <xs:element name="CodingEquations" type="clf:LabelsRegisterSymbolType"/>
-    <xs:element name="VideoFullRangeFlag" type="xs:boolean"/>
+    <xs:element name="VideoSignalRange" type="clf:VideoSignalRangeType"/>
   </xs:sequence>
 </xs:complexType>
 

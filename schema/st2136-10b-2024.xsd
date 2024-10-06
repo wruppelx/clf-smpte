@@ -54,11 +54,23 @@
           </xs:choice>
           <xs:element name="Signer" type="ds:KeyInfoType" minOccurs="0" />
           <xs:element ref="ds:Signature" minOccurs="0" />
-       </xs:sequence>
+        </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+
+<!--  VideoSignalRangeType redefinition  -->
+  <xs:simpleType name="VideoSignalRangeType">
+    <xs:restriction base="clf:VideoSignalRangeType">
+      <xs:enumeration value="LegalRange1" />
+      <xs:enumeration value="LegalRange2" />
+      <xs:enumeration value="LegalRange3" />
+      <xs:enumeration value="FullRange" />
+    </xs:restriction>
+  </xs:simpleType>
 </xs:redefine>
+
+
 
 <xs:group name="Option1">
   <xs:sequence>

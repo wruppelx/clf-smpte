@@ -12,13 +12,13 @@
           <ColorPrimaries>ColorPrimaries_ITU709</ColorPrimaries>
           <TransferCharacteristic>TransferCharacteristic_ITU709</TransferCharacteristic>
           <CodingEquations>CodingEquations_ITU709</CodingEquations>
-          <VideoFullRangeFlag>false</VideoFullRangeFlag>
+          <VideoSignalRange>LegalRange1</VideoSignalRange>
         </InputCharacteristics>
         <OutputCharacteristics>
           <ColorPrimaries>ColorPrimaries_ITU2020</ColorPrimaries>
           <TransferCharacteristic>TransferCharacteristic_ITU709</TransferCharacteristic>
           <CodingEquations>CodingEquations_ITU2100_ICtCp</CodingEquations>
-          <VideoFullRangeFlag>false</VideoFullRangeFlag>
+          <VideoSignalRange>LegalRange1</VideoSignalRange>
         </OutputCharacteristics>
         <Keywords>Test LUT, Scene Referred</Keywords>
     </Info>
