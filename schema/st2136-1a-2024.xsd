@@ -22,11 +22,28 @@
   </xs:restriction>
 </xs:simpleType>
 
+<!--  Data Type: nonNegativeFloatType  -->
+<xs:simpleType name="nonNegativeFloatType">
+  <xs:restriction base="xs:float">
+    <xs:minInclusive value="0"/>
+  </xs:restriction>
+</xs:simpleType>
+
 <!--  Data Type: positiveFloatListLength3Type  -->
 <xs:simpleType name="positiveFloatListLength3Type">
   <xs:restriction>
     <xs:simpleType>
       <xs:list itemType="clf:positiveFloatType"/>
+    </xs:simpleType>
+    <xs:length value="3"/>
+  </xs:restriction>
+</xs:simpleType>
+
+<!--  Data Type: nonNegativeFloatListLength3Type  -->
+<xs:simpleType name="nonNegativeFloatListLength3Type">
+  <xs:restriction>
+    <xs:simpleType>
+      <xs:list itemType="clf:nonNegativeFloatType"/>
     </xs:simpleType>
     <xs:length value="3"/>
   </xs:restriction>
@@ -370,14 +387,14 @@
 </xs:complexType>
 <xs:complexType name="SOPNodeType">
   <xs:sequence>
-    <xs:element name="Slope" type="clf:positiveFloatListLength3Type" default="1.0 1.0 1.0"/>
+    <xs:element name="Slope" type="clf:nonNegativeFloatListLength3Type" default="1.0 1.0 1.0"/>
     <xs:element name="Offset" type="clf:floatListLength3Type" default="0.0 0.0 0.0"/>
     <xs:element name="Power" type="clf:positiveFloatListLength3Type" default="1.0 1.0 1.0"/>
   </xs:sequence>
 </xs:complexType>
 <xs:complexType name="SatNodeType">
   <xs:sequence>
-    <xs:element name="Saturation" type="clf:positiveFloatType" minOccurs="0" default="1.0"/>
+    <xs:element name="Saturation" type="clf:nonNegativeFloatType" minOccurs="0" default="1.0"/>
   </xs:sequence>
 </xs:complexType>
 
