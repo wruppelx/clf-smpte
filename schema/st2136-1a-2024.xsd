@@ -1,65 +1,152 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema targetNamespace="http://www.smpte-ra.org/ns/2136/2023"
-  xmlns:dcml="http://www.smpte-ra.org/schemas/433/2008/dcmlTypes"
+<xs:schema targetNamespace="http://www.smpte-ra.org/ns/2136-1/2024"
+  xmlns:dcml="http://www.smpte-ra.org/schemas/433/2008/dcmlTypes/"
   xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
   xmlns:xs="http://www.w3.org/2001/XMLSchema"
-  xmlns:clf="http://www.smpte-ra.org/ns/2136/2023"
+  xmlns:clf="http://www.smpte-ra.org/ns/2136-1/2024"
   xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning"
   vc:minVersion="1.0" elementFormDefault="qualified" attributeFormDefault="unqualified">
   <xs:import namespace="http://www.w3.org/2000/09/xmldsig#"/>
-  <xs:import namespace="http://www.smpte-ra.org/schemas/433/2008/dcmlTypes"/>
+  <xs:import namespace="http://www.smpte-ra.org/schemas/433/2008/dcmlTypes/"/>
 
-<!--  Process List definition  -->
-<xs:element name="ProcessList" type="clf:ProcessListType"/>
-<xs:complexType name="ProcessListType">
-  <xs:sequence>
-    <xs:element ref="clf:Profile" minOccurs="0" maxOccurs="1"/>
-    <xs:element ref="clf:Description" minOccurs="0" maxOccurs="unbounded"/>
-    <xs:element ref="clf:InputDescriptor" minOccurs="0" maxOccurs="1"/>
-    <xs:element ref="clf:OutputDescriptor" minOccurs="0" maxOccurs="1"/>
-    <xs:element ref="clf:Info" minOccurs="0" maxOccurs="1"/>
-    <xs:element ref="clf:ProcessNode" minOccurs="1" maxOccurs="unbounded"/>
-  </xs:sequence>
-  <xs:attribute name="id" type="dcml:UUIDType" use="required"/>
-  <xs:attribute name="compCLFversion" type="xs:string" use="optional"/><!-- deprecated, CLF version is signalled by the schama URI -->
-  <xs:attribute name="name" type="xs:string" use="optional"/>
-  <xs:attribute name="inverseOf" type="dcml:UUIDType" use="optional"/>
+<!--  SIMPLE DATA TYPES  -->
+<!--  Data Type: floatListType  -->
+<xs:simpleType name="floatListType">
+  <xs:list itemType="xs:float"/>
+</xs:simpleType>
+
+<!--  Data Type: positiveFloatType  -->
+<xs:simpleType name="positiveFloatType">
+  <xs:restriction base="xs:float">
+    <xs:minExclusive value="0"/>
+  </xs:restriction>
+</xs:simpleType>
+
+<!--  Data Type: nonNegativeFloatType  -->
+<xs:simpleType name="nonNegativeFloatType">
+  <xs:restriction base="xs:float">
+    <xs:minInclusive value="0"/>
+  </xs:restriction>
+</xs:simpleType>
+
+<!--  Data Type: positiveFloatListLength3Type  -->
+<xs:simpleType name="positiveFloatListLength3Type">
+  <xs:restriction>
+    <xs:simpleType>
+      <xs:list itemType="clf:positiveFloatType"/>
+    </xs:simpleType>
+    <xs:length value="3"/>
+  </xs:restriction>
+</xs:simpleType>
+
+<!--  Data Type: nonNegativeFloatListLength3Type  -->
+<xs:simpleType name="nonNegativeFloatListLength3Type">
+  <xs:restriction>
+    <xs:simpleType>
+      <xs:list itemType="clf:nonNegativeFloatType"/>
+    </xs:simpleType>
+    <xs:length value="3"/>
+  </xs:restriction>
+</xs:simpleType>
+
+<!--  Data Type: floatListLength3Type  -->
+<xs:simpleType name="floatListLength3Type">
+  <xs:restriction>
+    <xs:simpleType>
+      <xs:list itemType="xs:float"/>
+    </xs:simpleType>
+    <xs:length value="3"/>
+  </xs:restriction>
+</xs:simpleType>
+
+<!--  Data Type: dimType  -->
+<xs:simpleType name="dimType">
+  <xs:restriction base="xs:string">
+    <xs:minLength value="3"/>
+    <xs:pattern value="[\d\s]*\d"/>
+  </xs:restriction>
+</xs:simpleType>
+
+<!--  Data Type: bitDepthType  -->
+<xs:simpleType name="bitDepthType">
+  <xs:restriction base="xs:string">
+    <xs:enumeration value="8i"/>
+    <xs:enumeration value="10i"/>
+    <xs:enumeration value="12i"/>
+    <xs:enumeration value="16i"/>
+    <xs:enumeration value="16f"/>
+    <xs:enumeration value="32f"/>
+  </xs:restriction>
+</xs:simpleType>
+
+<!--  Data Type: channelType  -->
+<xs:simpleType name="channelType">
+  <xs:restriction base="xs:string">
+    <xs:pattern value="[RGB]"/>
+  </xs:restriction>
+</xs:simpleType>
+
+<!--  Data Type: URNType  -->
+<xs:simpleType name="URNType">
+  <xs:restriction base="xs:anyURI">
+    <xs:pattern value="urn:[A-Za-z0-9][A-Za-z0-9-]{0,31}:([A-Za-z0-9()+,\-.:=@;$_!*']|%[0-9A-Fa-f]{2})"/>
+  </xs:restriction>
+</xs:simpleType>
+
+<!--  Data Type: VideoSignalRangeType  -->
+<!--  Restrictions can be defined for CLF Profiles -->
+<xs:simpleType name="VideoSignalRangeType">
+  <xs:restriction base="xs:string"/>
+</xs:simpleType>
+
+<!--  SIMPLE DATA TYPES END -->
+
+<!--  COMPLEX DATA TYPES  -->
+<!--  Data Type: ArrayType  -->
+<xs:complexType name="ArrayType">
+  <xs:simpleContent>
+    <xs:extension base="clf:floatListType">
+      <xs:attribute name="dim" type="clf:dimType" use="required"/>
+    </xs:extension>
+  </xs:simpleContent>
 </xs:complexType>
 
-<!-- Elements used in ProcessList -->
-<xs:element name="Profile" type="dcml:UserTextType"/>
-<xs:element name="Description" type="dcml:UserTextType"/>
-<xs:element name="InputDescriptor" type="dcml:UserTextType"/>
-<xs:element name="OutputDescriptor" type="dcml:UserTextType"/>
-
-<!--  Info element definition  -->
-<xs:element name="Info" type="clf:InfoType"/>
-<xs:complexType name="InfoType">
-  <xs:sequence>
-    <xs:element name="AppRelease" type="dcml:UserTextType" minOccurs="0" maxOccurs="1"/>
-    <xs:element name="Copyright" type="dcml:UserTextType" minOccurs="0" maxOccurs="1"/>
-    <xs:element name="Revision" type="dcml:UserTextType" minOccurs="0" maxOccurs="1"/>
-    <xs:element name="ACEStransformID" type="clf:URNType" minOccurs="0" maxOccurs="1"/>
-    <xs:element name="ACESuserName" type="dcml:UserTextType" minOccurs="0" maxOccurs="1"/>
-    <xs:element ref="clf:CalibrationInfo" minOccurs="0" maxOccurs="1"/>
-    <xs:any namespace="##other" minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
-  </xs:sequence>
-  <xs:anyAttribute processContents="lax"/>
+<!--  Data Type: MatrixArrayType  -->
+<xs:complexType name="MatrixArrayType">
+  <xs:simpleContent>
+    <xs:extension base="clf:ArrayType">
+      <xs:attribute name="dim" use="required">
+        <xs:simpleType>
+          <xs:restriction base="clf:dimType">
+            <xs:enumeration value="3 3"/>
+            <xs:enumeration value="3 4"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:extension>
+  </xs:simpleContent>
 </xs:complexType>
 
-<!--  CalibrationInfo element definition  -->
-<xs:element name="CalibrationInfo" type="clf:CalibrationInfoType"/>
-<xs:complexType name="CalibrationInfoType">
+<!--  Data Type: SignalCharacteristics  -->
+<xs:complexType name="SignalCharacteristicsType">
   <xs:sequence>
-    <xs:element name="DisplayDeviceSerialNum" type="dcml:UserTextType" minOccurs="0" maxOccurs="1"/>
-    <xs:element name="DisplayDeviceHostName" type="dcml:UserTextType" minOccurs="0" maxOccurs="1"/>
-    <xs:element name="OperatorName" type="dcml:UserTextType" minOccurs="0" maxOccurs="1"/>
-    <xs:element name="CalibrationDateTime" type="dcml:UserTextType" minOccurs="0" maxOccurs="1"/>
-    <xs:element name="MeasurementProbe" type="dcml:UserTextType" minOccurs="0" maxOccurs="1"/>
-    <xs:element name="CalibrationSoftwareName" type="dcml:UserTextType" minOccurs="0" maxOccurs="1"/>
-    <xs:element name="CalibrationSoftwareVersion" type="dcml:UserTextType" minOccurs="0" maxOccurs="1"/>
+    <xs:element name="ColorPrimaries" type="clf:LabelsRegisterSymbolType"/>
+    <xs:element name="TransferCharacteristic" type="clf:LabelsRegisterSymbolType"/>
+    <xs:element name="CodingEquations" type="clf:LabelsRegisterSymbolType"/>
+    <xs:element name="VideoSignalRange" type="clf:VideoSignalRangeType"/>
   </xs:sequence>
 </xs:complexType>
+
+<!--  Data Type: LabelsRegisterSymbol  -->
+<xs:complexType name="LabelsRegisterSymbolType">
+  <xs:simpleContent>
+    <xs:extension base="xs:string">
+      <xs:attribute name="scope" type="xs:anyURI" use="optional"
+        default="http://www.smpte-ra.org/schemas/400/2012"/>
+    </xs:extension>
+  </xs:simpleContent>
+</xs:complexType>
+<!--  COMPLEX DATA TYPES END -->
 
 <!--  ProcessNode definition  -->
 <xs:element name="ProcessNode" type="clf:ProcessNodeType"/>
@@ -73,13 +160,55 @@
   <xs:attribute name="outBitDepth" type="clf:bitDepthType" use="required"/>
 </xs:complexType>
 
+<!--  Process List definition  -->
+<xs:element name="ProcessList" type="clf:ProcessListType"/>
+<xs:complexType name="ProcessListType">
+  <xs:sequence>
+    <xs:element ref="clf:Description" minOccurs="0" maxOccurs="unbounded"/>
+    <xs:element ref="clf:InputDescriptor" minOccurs="0"/>
+    <xs:element ref="clf:OutputDescriptor" minOccurs="0"/>
+    <xs:element ref="clf:Info" minOccurs="0"/>
+    <xs:element ref="clf:ProcessNode" maxOccurs="unbounded"/>
+    <xs:element name="Signer" type="ds:KeyInfoType" minOccurs="0"/>
+    <xs:element ref="ds:Signature" minOccurs="0"/>
+  </xs:sequence>
+  <xs:attribute name="id" type="dcml:UUIDType" use="required"/>
+  <xs:attribute name="compCLFversion" type="xs:string" use="optional"/><!-- deprecated, CLF version is signalled by the schama URI -->
+  <xs:attribute name="name" type="xs:string" use="optional"/>
+  <xs:attribute name="inverseOf" type="dcml:UUIDType" use="optional"/>
+</xs:complexType>
+
+<!-- Elements used in ProcessList -->
+<xs:element name="Profile" type="xs:string"/>
+<xs:element name="Description" type="dcml:UserTextType"/>
+<xs:element name="InputDescriptor" type="dcml:UserTextType"/>
+<xs:element name="OutputDescriptor" type="dcml:UserTextType"/>
+
+<!--  Info element definition  -->
+<xs:element name="Info" type="clf:InfoType"/>
+<xs:complexType name="InfoType">
+  <xs:sequence>
+    <xs:element ref="clf:Profile" minOccurs="0"/>
+    <xs:element name="AppRelease" type="dcml:UserTextType" minOccurs="0"/>
+    <xs:element name="Copyright" type="dcml:UserTextType" minOccurs="0"/>
+    <xs:element name="Revision" type="dcml:UserTextType" minOccurs="0"/>
+    <xs:element name="ACEStransformID" type="clf:URNType" minOccurs="0"/>
+    <xs:element name="ACESuserName" type="dcml:UserTextType" minOccurs="0"/>
+    <xs:element name="InputCharacteristics" type="clf:SignalCharacteristicsType" minOccurs="0"/>
+    <xs:element name="OutputCharacteristics" type="clf:SignalCharacteristicsType" minOccurs="0"/>
+    <xs:element name="Keywords" type="dcml:UserTextType" minOccurs="0"/>
+    <xs:any namespace="##other" minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
+  </xs:sequence>
+  <xs:anyAttribute processContents="lax"/>
+</xs:complexType>
+
 <!--  ProcessNode: LUT1D definition  -->
 <xs:element name="LUT1D" type="clf:LUT1DType" substitutionGroup="clf:ProcessNode"/>
 <xs:complexType name="LUT1DType">
   <xs:complexContent>
     <xs:extension base="clf:ProcessNodeType">
       <xs:sequence>
-        <xs:element name="Array" type="clf:ArrayType" minOccurs="1" maxOccurs="1"/>
+        <xs:element name="Array" type="clf:ArrayType"/>
       </xs:sequence>
       <xs:attribute name="interpolation" use="optional" fixed="linear" type="xs:string"/>
       <xs:attribute name="rawHalfs" type="xs:string" use="optional" fixed="true"/>
@@ -94,7 +223,7 @@
   <xs:complexContent>
     <xs:extension base="clf:ProcessNodeType">
       <xs:sequence>
-        <xs:element name="Array" type="clf:ArrayType" minOccurs="1" maxOccurs="1"/>
+        <xs:element name="Array" type="clf:ArrayType"/>
       </xs:sequence>
       <xs:attribute name="interpolation" use="optional" default="trilinear">
         <xs:simpleType>
@@ -114,7 +243,7 @@
   <xs:complexContent>
     <xs:extension base="clf:ProcessNodeType">
       <xs:sequence>
-        <xs:element name="Array" type="clf:MatrixArrayType" minOccurs="1" maxOccurs="1"/>
+        <xs:element name="Array" type="clf:MatrixArrayType"/>
       </xs:sequence>
     </xs:extension>
   </xs:complexContent>
@@ -124,24 +253,24 @@
 <xs:element name="Range" type="clf:RangeType" substitutionGroup="clf:ProcessNode"/>
 <xs:group name="MinValueGroup">
   <xs:sequence>
-    <xs:element name="minInValue" type="xs:float" minOccurs="1" maxOccurs="1"/>
-    <xs:element name="minOutValue" type="xs:float" minOccurs="1" maxOccurs="1"/>
-    <xs:choice minOccurs="0" maxOccurs="1">
+    <xs:element name="minInValue" type="xs:float"/>
+    <xs:element name="minOutValue" type="xs:float"/>
+    <xs:choice minOccurs="0">
       <xs:group ref="clf:MaxValueGroup"/>
     </xs:choice>
   </xs:sequence>
 </xs:group>
 <xs:group name="MaxValueGroup">
   <xs:sequence>
-    <xs:element name="maxInValue" type="xs:float" minOccurs="1" maxOccurs="1"/>
-    <xs:element name="maxOutValue" type="xs:float" minOccurs="1" maxOccurs="1"/>
+    <xs:element name="maxInValue" type="xs:float"/>
+    <xs:element name="maxOutValue" type="xs:float"/>
   </xs:sequence>
 </xs:group>
 <xs:complexType name="RangeType">
   <xs:complexContent>
     <xs:extension base="clf:ProcessNodeType">
       <xs:sequence>
-        <xs:choice minOccurs="1" maxOccurs="1">
+        <xs:choice>
           <xs:group ref="clf:MinValueGroup"/>
           <xs:group ref="clf:MaxValueGroup"/>
         </xs:choice>
@@ -191,7 +320,6 @@
   <xs:attribute name="linSideOffset" type="xs:float" use="optional" default="0.0"/>
   <xs:attribute name="linSideBreak" type="xs:float" use="optional" default="0.0"/>
   <xs:attribute name="linearSlope" type="xs:float" use="optional"/>
-  <xs:attribute name="linearOffset" type="xs:float" use="optional"/>
   <xs:attribute name="channel" type="clf:channelType" use="optional"/>
 </xs:complexType>
 
@@ -241,8 +369,8 @@
   <xs:complexContent>
     <xs:extension base="clf:ProcessNodeType">
       <xs:sequence>
-        <xs:element name="SOPNode" type="clf:SOPNodeType" minOccurs="0" maxOccurs="1"/>
-        <xs:element name="SatNode" type="clf:SatNodeType" minOccurs="0" maxOccurs="1"/>
+        <xs:element name="SOPNode" type="clf:SOPNodeType" minOccurs="0"/>
+        <xs:element name="SatNode" type="clf:SatNodeType" minOccurs="0"/>
       </xs:sequence>
       <xs:attribute name="style" default="Fwd">
         <xs:simpleType>
@@ -259,105 +387,15 @@
 </xs:complexType>
 <xs:complexType name="SOPNodeType">
   <xs:sequence>
-    <xs:element name="Slope" type="clf:positiveFloatListLength3Type" minOccurs="1" maxOccurs="1" default="1.0 1.0 1.0"/>
-    <xs:element name="Offset" type="clf:floatListLength3Type" minOccurs="1" maxOccurs="1" default="0.0 0.0 0.0"/>
-    <xs:element name="Power" type="clf:positiveFloatListLength3Type" minOccurs="1" maxOccurs="1" default="1.0 1.0 1.0"/>
+    <xs:element name="Slope" type="clf:nonNegativeFloatListLength3Type" default="1.0 1.0 1.0"/>
+    <xs:element name="Offset" type="clf:floatListLength3Type" default="0.0 0.0 0.0"/>
+    <xs:element name="Power" type="clf:positiveFloatListLength3Type" default="1.0 1.0 1.0"/>
   </xs:sequence>
 </xs:complexType>
 <xs:complexType name="SatNodeType">
   <xs:sequence>
-    <xs:element name="Saturation" type="clf:positiveFloatType" minOccurs="0" maxOccurs="1" default="1.0"/>
+    <xs:element name="Saturation" type="clf:nonNegativeFloatType" minOccurs="0" default="1.0"/>
   </xs:sequence>
 </xs:complexType>
 
-<!--  Data Type: ArrayType  -->
-<xs:complexType name="ArrayType">
-  <xs:simpleContent>
-    <xs:extension base="clf:floatListType">
-      <xs:attribute name="dim" type="clf:dimType" use="required"/>
-    </xs:extension>
-  </xs:simpleContent>
-</xs:complexType>
-
-<!--  Data Type: MatrixArrayType  -->
-<xs:complexType name="MatrixArrayType">
-  <xs:simpleContent>
-    <xs:extension base="clf:ArrayType">
-      <xs:attribute name="dim" use="required">
-        <xs:simpleType>
-          <xs:restriction base="clf:dimType">
-            <xs:enumeration value="3 3"/>
-            <xs:enumeration value="3 4"/>
-          </xs:restriction>
-        </xs:simpleType>
-      </xs:attribute>
-    </xs:extension>
-  </xs:simpleContent>
-</xs:complexType>
-
-<!--  Data Type: floatListType  -->
-<xs:simpleType name="floatListType">
-  <xs:list itemType="xs:float"/>
-</xs:simpleType>
-
-<!--  Data Type: positiveFloatType  -->
-<xs:simpleType name="positiveFloatType">
-  <xs:restriction base="xs:float">
-    <xs:minExclusive value="0"/>
-  </xs:restriction>
-</xs:simpleType>
-
-<!--  Data Type: positiveFloatListLength3Type  -->
-<xs:simpleType name="positiveFloatListLength3Type">
-  <xs:restriction>
-    <xs:simpleType>
-      <xs:list itemType="clf:positiveFloatType"/>
-    </xs:simpleType>
-    <xs:length value="3"/>
-  </xs:restriction>
-</xs:simpleType>
-
-<!--  Data Type: floatListLength3Type  -->
-<xs:simpleType name="floatListLength3Type">
-  <xs:restriction>
-    <xs:simpleType>
-      <xs:list itemType="xs:float"/>
-    </xs:simpleType>
-    <xs:length value="3"/>
-  </xs:restriction>
-</xs:simpleType>
-
-<!--  Data Type: dimType  -->
-<xs:simpleType name="dimType">
-  <xs:restriction base="xs:string">
-    <xs:minLength value="3"/>
-    <xs:pattern value="[\d\s]*\d"/>
-  </xs:restriction>
-</xs:simpleType>
-
-<!--  Data Type: bitDepthType  -->
-<xs:simpleType name="bitDepthType">
-  <xs:restriction base="xs:string">
-    <xs:enumeration value="8i"/>
-    <xs:enumeration value="10i"/>
-    <xs:enumeration value="12i"/>
-    <xs:enumeration value="16i"/>
-    <xs:enumeration value="16f"/>
-    <xs:enumeration value="32f"/>
-  </xs:restriction>
-</xs:simpleType>
-
-<!--  Data Type: channelType  -->
-<xs:simpleType name="channelType">
-  <xs:restriction base="xs:string">
-    <xs:pattern value="[RGB]"/>
-  </xs:restriction>
-</xs:simpleType>
-
-<!--  Data Type: URNType  -->
-<xs:simpleType name="URNType">
-  <xs:restriction base="xs:anyURI">
-    <xs:pattern value="urn:[A-Za-z0-9][A-Za-z0-9-]{0,31}:([A-Za-z0-9()+,\-.:=@;$_!*']|%[0-9A-Fa-f]{2})"/>
-  </xs:restriction>
-</xs:simpleType>
 </xs:schema>

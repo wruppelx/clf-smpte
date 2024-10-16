@@ -1,26 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ProcessList name="SMPTE Example Live Broadcast Advanced 10-bit Profile" xmlns="http://www.smpte-ra.org/ns/2136/2023" id="urn:uuid:7df53f68-aa62-4679-ae0f-b00fa001f8ca">  
-
-    <Profile>http://www.smpte-ra.org/ns/2136/2023#Live_Broadcast_Advanced_10-bit</Profile>
+<ProcessList name="SMPTE Example Live Broadcast Advanced 10-bit Profile" xmlns="http://www.smpte-ra.org/ns/2136-1/2024" id="urn:uuid:7df53f68-aa62-4679-ae0f-b00fa001f8ca">
 
     <Description>Demo Advanced Broadcast CLF with dummy values</Description>
 
     <Info>
+        <Profile>http://www.smpte-ra.org/ns/2136-10/2024#Live_Broadcast_Advanced_10-bit</Profile>
         <AppRelease>SMPTE_10E_Example</AppRelease>
         <Copyright>SMPTE MMXXIV</Copyright>
         <Revision>1.0</Revision>
-        <InputFullRangeVideoBool>false</InputFullRangeVideoBool>
-        <InputColorPrimariesSMPTESymbol>ColorPrimaries_ITU709</InputColorPrimariesSMPTESymbol>
-        <InputCodingEquationsSMPTESymbol>CodingEquations_ITU709</InputCodingEquationsSMPTESymbol>        
-        <InputTransferCharacteristicSMPTESymbol>
-        	TransferCharacteristic_ITU709	
-        </InputTransferCharacteristicSMPTESymbol>
-        <OutputFullRangeVideoBool>false</OutputFullRangeVideoBool>
-        <OutputColorPrimariesSMPTESymbol>ColorPrimaries_ITU2020</OutputColorPrimariesSMPTESymbol>
-        <OutputCodingEquationsSMPTESymbol>CodingEquations_ITU2100_ICtCp</OutputCodingEquationsSMPTESymbol>
-        <OutputTransferCharacteristicSMPTESymbol>
-            TransferCharacteristic_SMPTEST2084
-         </OutputTransferCharacteristicSMPTESymbol>
+        <InputCharacteristics>
+          <ColorPrimaries>ColorPrimaries_ITU709</ColorPrimaries>
+          <TransferCharacteristic>TransferCharacteristic_ITU709</TransferCharacteristic>
+          <CodingEquations>CodingEquations_ITU709</CodingEquations>
+          <VideoSignalRange>LegalRange1</VideoSignalRange>
+        </InputCharacteristics>
+        <OutputCharacteristics>
+          <ColorPrimaries>ColorPrimaries_ITU2020</ColorPrimaries>
+          <TransferCharacteristic>TransferCharacteristic_ITU709</TransferCharacteristic>
+          <CodingEquations>CodingEquations_ITU2100_ICtCp</CodingEquations>
+          <VideoSignalRange>LegalRange1</VideoSignalRange>
+        </OutputCharacteristics>
         <Keywords>Test LUT, Scene Referred</Keywords>
     </Info>
 

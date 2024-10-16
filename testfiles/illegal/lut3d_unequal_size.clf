@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ProcessList xmlns="http://www.smpte-ra.org/ns/2136/2023" id="urn:uuid:e65748b5-180c-4573-b8e2-ebbc27474d19">
+<ProcessList xmlns="http://www.smpte-ra.org/ns/2136-1/2024" id="urn:uuid:e65748b5-180c-4573-b8e2-ebbc27474d19">
   <Description>Lut3d must have equal grid dimensions</Description>
   <LUT3D inBitDepth="32f" outBitDepth="32f" id="urn:uuid:179e53df-b5f9-429d-af24-7bdbbc4986c0">
     <Array dim="2 2 3 3">

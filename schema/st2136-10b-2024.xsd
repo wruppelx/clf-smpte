@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  Schema for the Live_Broadcast_LUT33_10-bit CLF profile  -->
+<!--  Type redefinitions for ST 2136 brodcast profiles  -->
+<xs:schema targetNamespace="http://www.smpte-ra.org/ns/2136-1/2024"
+  xmlns="http://www.smpte-ra.org/ns/2136-10/2024"
+  xmlns:clf="http://www.smpte-ra.org/ns/2136-1/2024"
+  xmlns:dcml="http://www.smpte-ra.org/schemas/433/2008/dcmlTypes/"
+  xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning"
+  vc:minVersion="1.0" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <xs:import namespace="http://www.w3.org/2000/09/xmldsig#"/>
+  <xs:import namespace="http://www.smpte-ra.org/schemas/433/2008/dcmlTypes/"/>
+
+
+<xs:redefine schemaLocation="st2136-10a-2024.xsd">
+<!--  InfoType redefinition  -->
+  <xs:complexType name="InfoType">
+    <xs:complexContent>
+      <xs:restriction base="clf:InfoType">
+        <xs:sequence>
+<!--  Identifies the Live_Broadcast_LUT33_10-bit profile  -->
+          <xs:element name="Profile" type="xs:string" fixed="http://www.smpte-ra.org/ns/2136-10/2024#Live_Broadcast_LUT33_10-bit"/>
+          <xs:element name="AppRelease" type="dcml:UserTextType" minOccurs="0" maxOccurs="1"/>
+          <xs:element name="Copyright" type="dcml:UserTextType" minOccurs="0" maxOccurs="1"/>
+          <xs:element name="Revision" type="dcml:UserTextType" minOccurs="0" maxOccurs="1"/>
+          <xs:element name="ACEStransformID" type="clf:URNType" minOccurs="0" maxOccurs="1"/>
+          <xs:element name="ACESuserName" type="dcml:UserTextType" minOccurs="0" maxOccurs="1"/>
+          <xs:element name="InputCharacteristics" type="clf:SignalCharacteristicsType" minOccurs="1" maxOccurs="1"/>
+          <xs:element name="OutputCharacteristics" type="clf:SignalCharacteristicsType" minOccurs="1" maxOccurs="1"/>
+          <xs:element name="Keywords" type="dcml:UserTextType" minOccurs="1" maxOccurs="1"/>
+          <xs:any namespace="##other" minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
+        </xs:sequence>
+        <xs:anyAttribute processContents="lax"/>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+
+<!--  ProcessListType redefinition  -->
+  <xs:complexType name="ProcessListType">
+    <xs:complexContent>
+      <xs:extension base="clf:ProcessListType">
+        <xs:sequence>
+          <xs:element ref="clf:Description" minOccurs="0" maxOccurs="unbounded"/>
+          <xs:element ref="clf:InputDescriptor" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="clf:OutputDescriptor" minOccurs="0" maxOccurs="1"/>
+          <xs:element ref="clf:Info" minOccurs="1" maxOccurs="1"/>
+          <xs:choice minOccurs="0" maxOccurs="1">
+            <xs:group ref="clf:Option1"/>
+          </xs:choice>
+          <xs:element name="LUT3D" type="clf:LUT3DType" minOccurs="1" maxOccurs="1"/>
+          <xs:choice minOccurs="0" maxOccurs="1">
+            <xs:group ref="clf:Option1"/>
+          </xs:choice>
+          <xs:element name="Signer" type="ds:KeyInfoType" minOccurs="0" />
+          <xs:element ref="ds:Signature" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+<!--  VideoSignalRangeType redefinition  -->
+  <xs:simpleType name="VideoSignalRangeType">
+    <xs:restriction base="clf:VideoSignalRangeType">
+      <xs:enumeration value="LegalRange1" />
+      <xs:enumeration value="LegalRange2" />
+      <xs:enumeration value="LegalRange3" />
+      <xs:enumeration value="FullRange" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:redefine>
+
+
+
+<xs:group name="Option1">
+  <xs:sequence>
+          <xs:element name="LUT1D" type="clf:LUT1DType" minOccurs="1" maxOccurs="1"/>
+  </xs:sequence>
+</xs:group>
+
+</xs:schema>
