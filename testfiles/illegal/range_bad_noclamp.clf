@@ -4,7 +4,5 @@
     <Range inBitDepth="32f" outBitDepth="16f" style="noClamp" id="urn:uuid:22995956-be7b-4c09-804c-9e7e56cf3974">
         <minInValue>     1e-1        </minInValue>
         <minOutValue>     1e-1        </minOutValue>
-        <maxInValue> 0.1 </maxInValue>
-        <maxOutValue> 0.1 </maxOutValue>
     </Range>
 </ProcessList>

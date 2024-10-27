@@ -46,8 +46,8 @@
     </Exponent>
     <Range inBitDepth="32f" outBitDepth="32f" style="Clamp" id="urn:uuid:fee04375-4e35-4c49-9df5-07abc4f6300a">
         <minInValue>-65504</minInValue>
-        <minOutValue>-65504</minOutValue>
         <maxInValue>65504</maxInValue>
+        <minOutValue>-65504</minOutValue>
         <maxOutValue>65504</maxOutValue>
     </Range>
 </ProcessList>

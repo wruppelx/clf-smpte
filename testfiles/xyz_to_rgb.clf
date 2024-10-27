@@ -12,8 +12,8 @@
     <Range inBitDepth="32f" outBitDepth="32f" style="Clamp" id="urn:uuid:cfdbcfda-24ef-40a7-ae5c-a38672a50da2">
         <Description>This range is redundant since the Lut1D will clamp to [0,1] also</Description>
         <minInValue>0</minInValue>
-        <minOutValue>0</minOutValue>
         <maxInValue>1</maxInValue>
+        <minOutValue>0</minOutValue>
         <maxOutValue>1</maxOutValue>
     </Range>
     <LUT1D inBitDepth="32f" outBitDepth="32f" id="urn:uuid:0fb0801f-d820-4bf0-877b-88593bacd20e">
