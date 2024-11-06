@@ -30,20 +30,20 @@
 
     <Range inBitDepth="12i" outBitDepth="10i" style="noClamp" id="urn:uuid:6a5f237e-6231-49f0-99be-906782cab011">
         <minInValue> 256.0000</minInValue>
-        <minOutValue>  20.0000</minOutValue>
         <maxInValue>3760.0000</maxInValue>
+        <minOutValue>  20.0000</minOutValue>
         <maxOutValue>1200.0000</maxOutValue>
     </Range>
     <Range inBitDepth="10i" outBitDepth="10i" style="Clamp" id="urn:uuid:901a5579-60f2-4d3e-92d0-2cc2056d0bbd">
         <minInValue> -42</minInValue>
-        <minOutValue>-20</minOutValue>
         <maxInValue>1100</maxInValue>
+        <minOutValue>-20</minOutValue>
         <maxOutValue>1000</maxOutValue>
     </Range>
     <Range inBitDepth="10i" outBitDepth="10i" id="urn:uuid:29f705d5-f251-495c-b53c-1f36794910cd">
         <minInValue> -10</minInValue>
-        <minOutValue>-20</minOutValue>
         <maxInValue> 990</maxInValue>
+        <minOutValue>-20</minOutValue>
         <maxOutValue>900</maxOutValue>
     </Range>
 

@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ProcessList xmlns="http://www.smpte-ra.org/ns/2136-1/2024" name="cdl simple example" id="urn:uuid:22466271-b182-40fe-b661-fa3e9a510ca4">
+<ProcessList xmlns="http://www.smpte-ra.org/ns/2136-1/2024" name="cdl simple example">
+   <Id>urn:uuid:22466271-b182-40fe-b661-fa3e9a510ca4</Id>
    <Description>Example of ASC CDL operation</Description>
    <InputDescriptor>inputDesc</InputDescriptor>
    <OutputDescriptor>outputDesc</OutputDescriptor>
-   <ASC_CDL name="cdl" inBitDepth="32f" outBitDepth="16f" style="Fwd" id="urn:uuid:ebb2d27d-2fda-4504-a372-d38f377354b7">
+   <ASC_CDL name="cdl" inBitDepth="32f" outBitDepth="16f" style="Fwd">
       <Description>ASC CDL operation</Description>
       <SOPNode>
           <Slope>

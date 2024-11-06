@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ProcessList name="all styles" xmlns="http://www.smpte-ra.org/ns/2136-1/2024" id="urn:uuid:4b207184-4794-4a73-b60d-fcc343d033c7">
+<ProcessList name="all styles" xmlns="http://www.smpte-ra.org/ns/2136-1/2024">
+    <Id>urn:uuid:4b207184-4794-4a73-b60d-fcc343d033c7</Id>
     <Description>Test all CDL style values</Description>
-    <ASC_CDL inBitDepth="16f" outBitDepth="10i" style="Fwd" id="urn:uuid:cf051f0e-794b-4028-ade5-6272cf55a22e">
+    <ASC_CDL inBitDepth="16f" outBitDepth="10i" style="Fwd">
         <SOPNode>
             <Slope>1.000000  1.000000  0.800000</Slope>
             <Offset>-0.020000  0.00000  0.150000</Offset>
@@ -11,7 +12,7 @@
             <Saturation>0.750000</Saturation>
         </SatNode>
     </ASC_CDL>
-    <ASC_CDL inBitDepth="10i" outBitDepth="10i" style="Rev" id="urn:uuid:892ad22f-dade-474b-ab8b-eadaba965168">
+    <ASC_CDL inBitDepth="10i" outBitDepth="10i" style="Rev">
         <SOPNode>
             <Slope>1.000000  1.000000  0.800000</Slope>
             <Offset>-0.020000  0.00000  0.150000</Offset>
@@ -21,7 +22,7 @@
             <Saturation>1.050000</Saturation>
         </SatNode>
     </ASC_CDL>
-    <ASC_CDL inBitDepth="10i" outBitDepth="8i" style="FwdNoClamp" id="urn:uuid:8524569a-1a3b-4c5b-aa43-4e5183aeb11b">
+    <ASC_CDL inBitDepth="10i" outBitDepth="8i" style="FwdNoClamp">
         <SOPNode>
             <Slope>1.000000  1.000000  0.800000</Slope>
             <Offset>-0.020000  0.00000  0.150000</Offset>
@@ -31,7 +32,7 @@
             <Saturation>0.750000</Saturation>
         </SatNode>
     </ASC_CDL>
-     <ASC_CDL inBitDepth="8i" outBitDepth="32f" style="RevNoClamp" id="urn:uuid:0aa5f3fc-569b-484a-958e-4b21cf1b9f4d">
+     <ASC_CDL inBitDepth="8i" outBitDepth="32f" style="RevNoClamp">
         <SOPNode>
             <Slope>1.000000  1.000000  0.800000</Slope>
             <Offset>-0.020000  0.00000  0.150000</Offset>

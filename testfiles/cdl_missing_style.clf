@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ProcessList xmlns="http://www.smpte-ra.org/ns/2136-1/2024" name="missing style" id="urn:uuid:62b6c5e9-9374-4bc0-95bf-d949882ed49b">
+<ProcessList xmlns="http://www.smpte-ra.org/ns/2136-1/2024" name="missing style">
+   <Id>urn:uuid:62b6c5e9-9374-4bc0-95bf-d949882ed49b</Id>
    <Description>Missing style defaults to "Fwd"</Description>
-   <ASC_CDL name="cdl" inBitDepth="32f" outBitDepth="16f" id="urn:uuid:51ff9b86-f561-460e-ae5d-1a3701f77a7a">
+   <ASC_CDL name="cdl" inBitDepth="32f" outBitDepth="16f">
       <SOPNode>
           <Slope>1.35 1.1 0.71</Slope>
           <Offset>0.05 -0.23 0.11</Offset>

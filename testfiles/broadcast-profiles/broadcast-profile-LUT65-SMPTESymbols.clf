@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ProcessList name="SMPTE Example Live Broadcast LUT65 10-bit Profile" xmlns="http://www.smpte-ra.org/ns/2136-1/2024" id="urn:uuid:8ee6b986-1083-49a7-93d2-ae4b94bb0e1d">
-
+<ProcessList name="SMPTE Example Live Broadcast LUT65 10-bit Profile" xmlns="http://www.smpte-ra.org/ns/2136-1/2024">
+    <Id>urn:uuid:8ee6b986-1083-49a7-93d2-ae4b94bb0e1d</Id>
     <Description>Demo 65 cubed LUT with dummy values</Description>
 
     <Info>
@@ -23,7 +23,7 @@
         <Keywords>Test LUT, Scene Referred</Keywords>
     </Info>
     
-    <LUT3D name="Linear LUT 3D" interpolation="tetrahedral" inBitDepth="32f" outBitDepth="32f" id="urn:uuid:1a1a012c-21d4-4de6-9854-b473deb2a45f">  
+    <LUT3D name="Linear LUT 3D" interpolation="tetrahedral" inBitDepth="32f" outBitDepth="32f">  
         <Description>3d-LUT with extended range values</Description>  
         <Array dim="65 65 65 3">
             0.000000 0.000000 0.000000

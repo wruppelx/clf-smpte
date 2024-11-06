@@ -154,7 +154,7 @@
   <xs:sequence>
     <xs:element name="Description" type="dcml:UserTextType" minOccurs="0" maxOccurs="unbounded"/>
   </xs:sequence>
-  <xs:attribute name="id" type="dcml:UUIDType" use="required"/>
+  <xs:attribute name="id" type="xs:string" use="optional"/>
   <xs:attribute name="name" type="xs:string" use="optional"/>
   <xs:attribute name="inBitDepth" type="clf:bitDepthType" use="required"/>
   <xs:attribute name="outBitDepth" type="clf:bitDepthType" use="required"/>
@@ -164,6 +164,7 @@
 <xs:element name="ProcessList" type="clf:ProcessListType"/>
 <xs:complexType name="ProcessListType">
   <xs:sequence>
+    <xs:element name="Id" type="dcml:UUIDType" minOccurs="0"/>
     <xs:element ref="clf:Description" minOccurs="0" maxOccurs="unbounded"/>
     <xs:element ref="clf:InputDescriptor" minOccurs="0"/>
     <xs:element ref="clf:OutputDescriptor" minOccurs="0"/>
@@ -172,10 +173,10 @@
     <xs:element name="Signer" type="ds:KeyInfoType" minOccurs="0"/>
     <xs:element ref="ds:Signature" minOccurs="0"/>
   </xs:sequence>
-  <xs:attribute name="id" type="dcml:UUIDType" use="required"/>
+  <xs:attribute name="id" type="xs:string" use="optional"/>
   <xs:attribute name="compCLFversion" type="xs:string" use="optional"/><!-- deprecated, CLF version is signalled by the schama URI -->
   <xs:attribute name="name" type="xs:string" use="optional"/>
-  <xs:attribute name="inverseOf" type="dcml:UUIDType" use="optional"/>
+  <xs:attribute name="inverseOf" type="xs:string" use="optional"/>
 </xs:complexType>
 
 <!-- Elements used in ProcessList -->
@@ -251,29 +252,14 @@
 
 <!--  ProcessNode: Range definition  -->
 <xs:element name="Range" type="clf:RangeType" substitutionGroup="clf:ProcessNode"/>
-<xs:group name="MinValueGroup">
-  <xs:sequence>
-    <xs:element name="minInValue" type="xs:float"/>
-    <xs:element name="minOutValue" type="xs:float"/>
-    <xs:choice minOccurs="0">
-      <xs:group ref="clf:MaxValueGroup"/>
-    </xs:choice>
-  </xs:sequence>
-</xs:group>
-<xs:group name="MaxValueGroup">
-  <xs:sequence>
-    <xs:element name="maxInValue" type="xs:float"/>
-    <xs:element name="maxOutValue" type="xs:float"/>
-  </xs:sequence>
-</xs:group>
 <xs:complexType name="RangeType">
   <xs:complexContent>
     <xs:extension base="clf:ProcessNodeType">
       <xs:sequence>
-        <xs:choice>
-          <xs:group ref="clf:MinValueGroup"/>
-          <xs:group ref="clf:MaxValueGroup"/>
-        </xs:choice>
+        <xs:element name="minInValue" type="xs:float" minOccurs="0"/>
+        <xs:element name="maxInValue" type="xs:float" minOccurs="0"/>
+        <xs:element name="minOutValue" type="xs:float" minOccurs="0"/>
+        <xs:element name="maxOutValue" type="xs:float" minOccurs="0"/>
       </xs:sequence>
       <xs:attribute name="style" use="optional" default="Clamp">
         <xs:simpleType>
