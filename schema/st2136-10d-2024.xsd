@@ -41,7 +41,7 @@
     <xs:complexContent>
       <xs:extension base="clf:ProcessListType">
         <xs:sequence>
-          <xs:element name="Id" type="dcml:UUIDType" minOccurs="0"/>
+          <xs:element ref="clf:Id" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="clf:Description" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element ref="clf:InputDescriptor" minOccurs="0" maxOccurs="1"/>
           <xs:element ref="clf:OutputDescriptor" minOccurs="0" maxOccurs="1"/>
