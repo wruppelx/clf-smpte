@@ -158,6 +158,7 @@
   <xs:attribute name="name" type="xs:string" use="optional"/>
   <xs:attribute name="inBitDepth" type="clf:bitDepthType" use="required"/>
   <xs:attribute name="outBitDepth" type="clf:bitDepthType" use="required"/>
+  <xs:anyAttribute processContents="lax"/>
 </xs:complexType>
 
 <!--  Process List definition  -->
@@ -177,6 +178,7 @@
   <xs:attribute name="compCLFversion" type="xs:string" use="optional"/><!-- deprecated, CLF version is signalled by the schama URI -->
   <xs:attribute name="name" type="xs:string" use="optional"/>
   <xs:attribute name="inverseOf" type="xs:string" use="optional"/>
+  <xs:anyAttribute processContents="lax"/>
 </xs:complexType>
 
 <!-- Elements used in ProcessListType -->
@@ -198,7 +200,7 @@
     <xs:element name="InputCharacteristics" type="clf:SignalCharacteristicsType" minOccurs="0"/>
     <xs:element name="OutputCharacteristics" type="clf:SignalCharacteristicsType" minOccurs="0"/>
     <xs:element name="Keywords" type="dcml:UserTextType" minOccurs="0"/>
-    <xs:any namespace="##other" minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
+    <xs:any namespace="##any" minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
   </xs:sequence>
   <xs:anyAttribute processContents="lax"/>
 </xs:complexType>
